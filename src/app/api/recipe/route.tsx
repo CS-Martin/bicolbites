@@ -1,6 +1,6 @@
+import { RECIPE_JSON_FILE_PATH } from "@/lib/constants";
 import { promises as fs } from "fs";
 import { NextResponse } from "next/server";
-import { RECIPE_JSON_FILE_PATH } from "@/lib/constants";
 
 export async function GET() {
   try {

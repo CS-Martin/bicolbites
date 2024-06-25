@@ -1,11 +1,24 @@
-// import { Recipe } from "@/types/recipe.types";
+import { Recipe } from "@/types/recipe.types";
 
-// const fetchAllRecipes = async (): Promise<Recipe[]> => {
-//     try {
-//         const response = await fetch('/api/recipe');
-//         const data: Recipe[] = await response.json();
+export const fetchAllRecipes = async (): Promise<Recipe[]> => {
+  console.log("ENTERED RECIPE API");
+  try {
+    const storedRecipes: string | null = localStorage.getItem("recipes");
 
-//     } catch (error) {
-//         console.error(error);
-//     }
-// };
+    if (storedRecipes) {
+      return JSON.parse(storedRecipes as string);
+    }
+
+    const response: Response = await fetch("http://localhost:3000/api/recipe");
+    const recipes: Recipe[] = await response.json();
+
+    console.log("DEPOTA", recipes);
+
+    localStorage.setItem("recipes", JSON.stringify(recipes));
+
+    return recipes;
+  } catch (error) {
+    console.error("Error fetching recipes:", error);
+    return [];
+  }
+};
