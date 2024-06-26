@@ -3,9 +3,14 @@
 import { useDisplayRecipes } from '@/hooks/useRecipes';
 import RecipeCard from './_components/recipe-card';
 import HomeSearch from './_components/search';
+import { useSearchParams } from 'next/navigation';
 
 export default function Home() {
-  const recipes = useDisplayRecipes();
+  const searchParams = useSearchParams();
+  const search = searchParams.get('search')?.toString() ?? '';
+
+  const recipes = useDisplayRecipes(search);
+
   return (
     <main>
       {/* <ModeToggle /> */}

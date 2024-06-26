@@ -1,29 +1,36 @@
 import { useState, useEffect } from 'react';
-import { fetchAllRecipes } from '@/services/recipes-api';
 import { Recipe } from '@/types/recipe.types';
+import { fetchAllRecipes } from '@/services/recipes-api';
 
-export const useDisplayRecipes = (): Recipe[] => {
+export const useDisplayRecipes = (searchParams: string): Recipe[] => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
 
   useEffect(() => {
     const fetchRecipes = async () => {
-      const recipesFromLocalStorage = await useGetRecipesFromLocalStorage();
-      setRecipes(recipesFromLocalStorage);
+      const recipes = await fetchAllRecipes();
+
+      if (searchParams) {
+        console.log('Search', searchParams);
+        const filteredRecipes = useFilterSearchedRecipes(searchParams, recipes);
+        return setRecipes(filteredRecipes);
+      }
+
+      setRecipes(recipes);
     };
 
     fetchRecipes();
-  }, []);
+  }, [searchParams]);
 
   return recipes;
 };
 
-export const useGetRecipesFromLocalStorage = async (): Promise<Recipe[]> => {
-  const storedRecipes: string | null = localStorage.getItem('recipes');
+export const useFilterSearchedRecipes = (
+  searchParams: string,
+  recipes: Recipe[]
+): Recipe[] => {
+  const searchedRecipes = recipes.filter((recipe) =>
+    recipe.name.toLowerCase().includes(searchParams.toLowerCase())
+  );
 
-  if (!storedRecipes) {
-    const recipes: Recipe[] = await fetchAllRecipes();
-    return recipes;
-  }
-
-  return JSON.parse(storedRecipes) as Recipe[];
+  return searchedRecipes as Recipe[];
 };
