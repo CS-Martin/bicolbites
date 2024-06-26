@@ -1,9 +1,7 @@
 'use client';
 
-import { ModeToggle } from '@/components/custom/theme-toggler';
 import { useDisplayRecipes } from '@/hooks/useRecipes';
 import RecipeCard from './_components/recipe-card';
-import Image from 'next/image';
 import HomeSearch from './_components/search';
 
 export default function Home() {
@@ -21,8 +19,8 @@ export default function Home() {
       <div className="border-b shadow-xl">
         <HomeSearch />
       </div>
-      <div className="container mt-10">
-        <div className="grid grid-cols-4">
+      <div className="container mt-10 pb-20">
+        <div className="grid grid-cols-5 gap-3">
           {recipes.map((recipe) => (
             <RecipeCard
               name={recipe.name}
