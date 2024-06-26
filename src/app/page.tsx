@@ -7,6 +7,7 @@ import { useSearchParams } from 'next/navigation';
 import { ModeToggle } from '@/components/custom/theme-toggler';
 import { Separator } from '@/components/ui/separator';
 import { Label } from '@/components/ui/label';
+import SortRecipesButton from './_components/sort';
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -16,7 +17,7 @@ export default function Home() {
 
   return (
     <main>
-      <ModeToggle />
+      {/* <ModeToggle /> */}
       <div className="h-[450px]">
         <img
           src="/images/people-enjoying-mexican-barbecue.jpg"
@@ -28,11 +29,12 @@ export default function Home() {
         <HomeSearch />
       </div>
       <div className="container mt-10 pb-20">
-        <div>
+        <div className="flex items-center justify-between">
           <Label className="flex gap-x-1 font-normal text-gray-400">
             Results:
             {search ? <Label>{search}</Label> : <Label>All</Label>}
           </Label>
+          <SortRecipesButton />
         </div>
         <Separator className="my-3" />
         <div className="grid grid-cols-5 gap-3">
