@@ -8,12 +8,15 @@ import { ModeToggle } from '@/components/custom/theme-toggler';
 import { Separator } from '@/components/ui/separator';
 import { Label } from '@/components/ui/label';
 import SortRecipesButton from './_components/sort';
+import { Suspense } from 'react';
+import { RecipeCardSkeleton } from '@/components/custom/skeletons';
+import { Recipe } from '@/types/recipe.types';
 
 export default function Home() {
   const searchParams = useSearchParams();
   const search = searchParams.get('search')?.toString() ?? '';
 
-  const recipes = useDisplayRecipes(search);
+  const { recipes, loading } = useDisplayRecipes(search);
 
   return (
     <main>
@@ -38,13 +41,18 @@ export default function Home() {
         </div>
         <Separator className="my-3" />
         <div className="grid grid-cols-5 gap-3">
-          {recipes.map((recipe) => (
-            <RecipeCard
-              name={recipe.name}
-              description={recipe.description}
-              image={recipe.image}
-            />
-          ))}
+          {loading ? (
+            <RecipeCardSkeleton />
+          ) : (
+            recipes.map((recipe: Recipe) => (
+              <RecipeCard
+                key={recipe.name}
+                name={recipe.name}
+                description={recipe.description}
+                image={recipe.image}
+              />
+            ))
+          )}
         </div>
       </div>
     </main>

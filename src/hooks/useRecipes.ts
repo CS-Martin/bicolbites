@@ -2,11 +2,15 @@ import { useState, useEffect } from 'react';
 import { Recipe } from '@/types/recipe.types';
 import { fetchAllRecipes } from '@/services/recipes-api';
 
-export const useDisplayRecipes = (searchParams: string): Recipe[] => {
+export const useDisplayRecipes = (
+  searchParams: string
+): { recipes: Recipe[]; loading: boolean } => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchRecipes = async () => {
+      setLoading(true);
       const recipes = await fetchAllRecipes();
 
       if (searchParams) {
@@ -16,12 +20,13 @@ export const useDisplayRecipes = (searchParams: string): Recipe[] => {
       }
 
       setRecipes(recipes);
+      setLoading(false);
     };
 
     fetchRecipes();
   }, [searchParams]);
 
-  return recipes;
+  return { recipes, loading };
 };
 
 export const useFilterSearchedRecipes = (
