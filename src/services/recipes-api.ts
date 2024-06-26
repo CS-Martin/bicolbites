@@ -7,7 +7,6 @@ export const fetchAllRecipes = async (): Promise<Recipe[]> => {
    */
 
   try {
-    await new Promise((resolve) => setTimeout(resolve, 3000));
     const response: Response = await fetch('http://localhost:3000/api/recipe');
     const recipes: Recipe[] = await response.json();
 

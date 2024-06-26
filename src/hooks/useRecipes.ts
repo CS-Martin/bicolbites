@@ -10,7 +10,6 @@ export const useDisplayRecipes = (
 
   useEffect(() => {
     const fetchRecipes = async () => {
-      setLoading(true);
       const recipes = await fetchAllRecipes();
 
       if (searchParams) {
@@ -20,10 +19,10 @@ export const useDisplayRecipes = (
       }
 
       setRecipes(recipes);
-      setLoading(false);
     };
 
     fetchRecipes();
+    setLoading(false);
   }, [searchParams]);
 
   return { recipes, loading };
