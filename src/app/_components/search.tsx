@@ -5,7 +5,7 @@ import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 const HomeSearch: React.FC = (): JSX.Element => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const { replace } = useRouter();
+  const router = useRouter();
 
   const handleSearch = (key: string) => {
     const params = new URLSearchParams(searchParams);
@@ -16,7 +16,11 @@ const HomeSearch: React.FC = (): JSX.Element => {
       params.delete('search');
     }
 
-    replace(`${pathname}?${params.toString()}`);
+    /**
+     * Encountered a nextjs bug that scrolls to the top
+     * on every change of the path/url
+     */
+    router.push(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
   return (
