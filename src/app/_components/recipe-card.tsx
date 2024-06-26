@@ -3,25 +3,21 @@
  * Note: turns out the you can pass 'use client' to children
  */
 
-import { Recipe } from '@/types/recipe.types'
-import React from 'react'
+import Image from 'next/image';
+import React from 'react';
+import { RecipeCard as RecipeCardProps } from '@/types/recipe.types';
 
-const RecipeCard: React.FC<Recipe> = ({
-  id,
+const RecipeCard: React.FC<RecipeCardProps> = ({
   name,
-  ingredients,
-  instructions
+  description,
+  image
 }): JSX.Element => {
   return (
     <div>
+      <img src={image} alt={name} width={200} height={200} />
       <h2>{name}</h2>
-      {ingredients.map((ingredient, index: number) => (
-        <p key={index}>
-          {index + 1}. {ingredient}
-        </p>
-      ))}
     </div>
-  )
-}
+  );
+};
 
-export default RecipeCard
+export default RecipeCard;

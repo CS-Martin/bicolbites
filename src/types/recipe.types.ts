@@ -1,7 +1,9 @@
 export type Recipe = {
-  id: number
-  name: string
-  ingredients: string[]
-  instructions: string[]
-  image?: string
-}
+  name: string;
+  description: string;
+  image: string;
+  ingredients: string[];
+  instructions: string[];
+};
+
+export type RecipeCard = Pick<Recipe, 'name' | 'description' | 'image'>;

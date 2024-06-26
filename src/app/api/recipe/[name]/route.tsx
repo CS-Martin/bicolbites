@@ -1,7 +1,7 @@
-import { NextResponse } from 'next/server'
-import { promises as fs } from 'fs'
-import { RECIPE_JSON_FILE_PATH } from '@/lib/constants'
-import { Recipe } from '@/types/recipe.types'
+import { NextResponse } from 'next/server';
+import { promises as fs } from 'fs';
+import { RECIPE_JSON_FILE_PATH } from '@/lib/constants';
+import { Recipe } from '@/types/recipe.types';
 
 /**
  * Fetches a specific recipe from the RECIPE_JSON_FILE_PATH based on the provided name.
@@ -12,18 +12,18 @@ import { Recipe } from '@/types/recipe.types'
  */
 export async function GET(request: Request, context: any) {
   try {
-    const { params } = context
-    const response = await fs.readFile(RECIPE_JSON_FILE_PATH, 'utf8')
+    const { params } = context;
+    const response = await fs.readFile(RECIPE_JSON_FILE_PATH, 'utf8');
     const recipe = JSON.parse(response).find(
       (recipe: Recipe) =>
         recipe.name.toLowerCase() === params.name.toLowerCase()
-    )
-    return NextResponse.json(recipe)
+    );
+    return NextResponse.json(recipe);
   } catch (error) {
-    console.error('Error fetching recipe:', error)
+    console.error('Error fetching recipe:', error);
     return NextResponse.json(
       { error: 'An error occurred while fetching recipe.' },
       { status: 500 }
-    )
+    );
   }
 }

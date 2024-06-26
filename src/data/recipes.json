@@ -1,7 +1,8 @@
 [
   {
-    "id": 1,
     "name": "Kinalas",
+    "description": "A Bicol dish consisting of noodles (pancit) garnished by scraped meat from pork or beef's head and other parts, enhanced with a thick deep-brown sauce coming from the brains of a cow or pig.",
+    "image": "https://i.pinimg.com/736x/82/73/d8/8273d863825a9e9b5d12d23d0c951ca1.jpg",
     "ingredients": [
       "1 kg pork or beef bones",
       "1/2 kg pork or beef meat",
@@ -31,8 +32,9 @@
     ]
   },
   {
-    "id": 2,
     "name": "Bicol Express",
+    "description": "a spicy Filipino stew made with two signature ingredients of Bicol cuisine: fiery-hot chilies and creamy coconut milk.",
+    "image": "https://salu-salo.com/wp-content/uploads/2017/02/Bicol-Express-2.jpg.webp",
     "ingredients": [
       "1 kg pork belly, cut into strips",
       "4 cups coconut milk",
@@ -56,8 +58,9 @@
     ]
   },
   {
-    "id": 3,
     "name": "Laing",
+    "description": "A Filipino dish of shredded or whole taro leaves with meat or seafood cooked in thick coconut milk spiced with labuyo chili, lemongrass, garlic, shallots, ginger, and shrimp paste.",
+    "image": "https://www.kawalingpinoy.com/wp-content/uploads/2019/05/laing-9-730x973.jpg",
     "ingredients": [
       "4 cups dried taro leaves",
       "1/2 kg pork belly or shrimp (optional)",
@@ -77,6 +80,63 @@
       "Lower the heat and add the dried taro leaves. Press them down to soak in the coconut milk mixture. Do not stir to avoid releasing the itchy substance from the taro leaves.",
       "Add the long green chili peppers and bird's eye chili (if using). Simmer for about 15-20 minutes or until the taro leaves are tender and the sauce has thickened.",
       "Pour in the coconut cream and cook for another 5 minutes. Season with salt and pepper to taste.",
+      "Serve hot with steamed rice."
+    ]
+  },
+  {
+    "name": "Pancit Bato",
+    "description": "A local noodle dish made with Pancit Bato noodles, named after the town of Bato in Camarines Sur. It is typically sautéed with meat, vegetables, and soy sauce.",
+    "image": "https://panlasangpinoy.com/wp-content/uploads/2013/10/How-to-cook-pancit-bato-from-Bicol-730x1099.jpg",
+    "ingredients": [
+      "500g Pancit Bato noodles",
+      "200g pork or chicken, sliced",
+      "2 tablespoons cooking oil",
+      "1 onion, chopped",
+      "4 cloves garlic, minced",
+      "1 carrot, julienned",
+      "1 cup cabbage, shredded",
+      "2 tablespoons soy sauce",
+      "1 tablespoon oyster sauce",
+      "1 cup chicken broth",
+      "Salt and pepper to taste",
+      "Chopped spring onions for garnish"
+    ],
+    "instructions": [
+      "Boil Pancit Bato noodles until tender. Drain and set aside.",
+      "In a large pan, heat the cooking oil over medium heat. Sauté garlic and onion until fragrant.",
+      "Add the sliced pork or chicken and cook until browned.",
+      "Add the carrots and cabbage, and cook for a few minutes until vegetables are tender.",
+      "Add soy sauce, oyster sauce, and chicken broth. Stir well to combine.",
+      "Add the cooked Pancit Bato noodles and mix well until all ingredients are evenly distributed.",
+      "Season with salt and pepper to taste.",
+      "Garnish with chopped spring onions before serving."
+    ]
+  },
+  {
+    "name": "Pinangat",
+    "image": "https://scontent.fmnl4-3.fna.fbcdn.net/v/t39.30808-6/309037265_473533714791263_6824033009652132200_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEynBLqGnTXplKN-2GrpfJKCZ7ilHCs0gcJnuKUcKzSB7YdyJPMDggkA1epEz9_KIz3_6BaF02rJx1OLoaqSLEb&_nc_ohc=0GU78GMtmMgQ7kNvgEwae42&_nc_ht=scontent.fmnl4-3.fna&oh=00_AYDKcR8Bim15fPCvsBXzxkh0fkGUKdiRHx3a_t4WiZDxqg&oe=66819C36",
+    "description": "A traditional Bicolano dish made with gabi (taro) leaves, filled with meat or fish, and cooked in coconut milk.",
+    "ingredients": [
+      "20 pieces gabi (taro) leaves, cleaned",
+      "1/2 kg ground pork or fish",
+      "1 onion, chopped",
+      "4 cloves garlic, minced",
+      "1 thumb-sized piece of ginger, minced",
+      "2 tablespoons shrimp paste (bagoong alamang)",
+      "6-8 pieces long green chili peppers (siling haba), sliced",
+      "4 cups coconut milk",
+      "1 cup coconut cream",
+      "Salt and pepper to taste",
+      "Banana leaves for wrapping"
+    ],
+    "instructions": [
+      "Prepare the filling: In a pan, heat some oil and saute the onion, garlic, and ginger until fragrant.",
+      "Add the ground pork or fish and shrimp paste. Cook until the meat is browned and cooked through.",
+      "Season with salt and pepper to taste. Set aside to cool slightly.",
+      "Prepare the gabi leaves: If the leaves are large, cut them into squares or rectangles. Blanch the leaves in boiling water for a few minutes to soften them. Drain and set aside.",
+      "Assemble the pinangat: Place a spoonful of the filling in the center of each gabi leaf. Fold the sides of the leaf to enclose the filling. Secure the sides with toothpicks or string (optional).",
+      "In a pot, arrange the pinangat packets in a single layer. Pour in the coconut milk and bring to a boil. Reduce heat and simmer for 15-20 minutes or until the gabi leaves are tender and cooked through.",
+      "Stir in the coconut cream and simmer for an additional 2-3 minutes. Season with salt and pepper to taste (optional).",
       "Serve hot with steamed rice."
     ]
   }
