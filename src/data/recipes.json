@@ -1,83 +1,83 @@
 [
-    {
-        "id": 1,
-        "name": "Kinalas",
-        "ingredients": [
-            "1 kg pork or beef bones",
-            "1/2 kg pork or beef meat",
-            "6 cups water",
-            "1 onion, chopped",
-            "4 cloves garlic, minced",
-            "1 piece star anise",
-            "2 tablespoons fish sauce",
-            "1 tablespoon soy sauce",
-            "Salt and pepper to taste",
-            "2 tablespoons cornstarch, dissolved in 1/4 cup water",
-            "Egg noodles",
-            "Boiled egg",
-            "Chopped spring onions",
-            "Crispy garlic bits",
-            "Calamansi or lemon"
-        ],
-        "instructions": [
-            "In a large pot, boil the pork or beef bones and meat with water. Skim off any scum that forms on the surface.",
-            "Add the onion, garlic, star anise, fish sauce, and soy sauce. Simmer for 1-2 hours or until the meat is tender.",
-            "Remove the meat from the broth, let it cool, then shred it into pieces.",
-            "Strain the broth to remove the bones and spices. Return the broth to the pot and bring it to a boil.",
-            "Add the dissolved cornstarch to the boiling broth to thicken it. Season with salt and pepper to taste.",
-            "Cook the egg noodles according to package instructions. Drain and set aside.",
-            "To serve, place some noodles in a bowl, add the shredded meat, and pour the thickened broth over them.",
-            "Garnish with boiled egg, chopped spring onions, crispy garlic bits, and a squeeze of calamansi or lemon."
-        ]
-    },
-    {
-        "id": 2,
-        "name": "Bicol Express",
-        "ingredients": [
-            "1 kg pork belly, cut into strips",
-            "4 cups coconut milk",
-            "1 cup coconut cream",
-            "6-8 pieces long green chili peppers (siling haba), sliced",
-            "2-4 pieces bird's eye chili (siling labuyo), chopped (optional, for extra spiciness)",
-            "1 head garlic, minced",
-            "1 onion, chopped",
-            "1 thumb-sized piece of ginger, minced",
-            "2 tablespoons shrimp paste (bagoong alamang)",
-            "Salt and pepper to taste"
-        ],
-        "instructions": [
-            "In a large pan, sauté garlic, onion, and ginger until fragrant.",
-            "Add the pork belly strips and cook until they turn slightly brown.",
-            "Pour in the coconut milk and bring to a boil. Reduce heat and simmer for about 20-30 minutes or until the pork is tender.",
-            "Add the shrimp paste and mix well. Continue to simmer until the sauce thickens and the oil starts to separate from the coconut milk.",
-            "Add the long green chili peppers and bird's eye chili (if using). Cook for another 5-10 minutes or until the chilies are tender.",
-            "Pour in the coconut cream and simmer for an additional 5 minutes. Season with salt and pepper to taste.",
-            "Serve hot with steamed rice."
-        ]
-    },
-    {
-        "id": 3,
-        "name": "Laing",
-        "ingredients": [
-            "4 cups dried taro leaves",
-            "1/2 kg pork belly or shrimp (optional)",
-            "4 cups coconut milk",
-            "1 cup coconut cream",
-            "1 onion, chopped",
-            "1 head garlic, minced",
-            "1 thumb-sized piece of ginger, minced",
-            "6-8 pieces long green chili peppers (siling haba), sliced",
-            "2-4 pieces bird's eye chili (siling labuyo), chopped (optional, for extra spiciness)",
-            "2 tablespoons shrimp paste (bagoong alamang)",
-            "Salt and pepper to taste"
-        ],
-        "instructions": [
-            "In a large pot, combine coconut milk, garlic, onion, ginger, and shrimp paste. Bring to a boil.",
-            "Add the pork belly or shrimp (if using) and cook until tender.",
-            "Lower the heat and add the dried taro leaves. Press them down to soak in the coconut milk mixture. Do not stir to avoid releasing the itchy substance from the taro leaves.",
-            "Add the long green chili peppers and bird's eye chili (if using). Simmer for about 15-20 minutes or until the taro leaves are tender and the sauce has thickened.",
-            "Pour in the coconut cream and cook for another 5 minutes. Season with salt and pepper to taste.",
-            "Serve hot with steamed rice."
-        ]
-    }
+  {
+    "id": 1,
+    "name": "Kinalas",
+    "ingredients": [
+      "1 kg pork or beef bones",
+      "1/2 kg pork or beef meat",
+      "6 cups water",
+      "1 onion, chopped",
+      "4 cloves garlic, minced",
+      "1 piece star anise",
+      "2 tablespoons fish sauce",
+      "1 tablespoon soy sauce",
+      "Salt and pepper to taste",
+      "2 tablespoons cornstarch, dissolved in 1/4 cup water",
+      "Egg noodles",
+      "Boiled egg",
+      "Chopped spring onions",
+      "Crispy garlic bits",
+      "Calamansi or lemon"
+    ],
+    "instructions": [
+      "In a large pot, boil the pork or beef bones and meat with water. Skim off any scum that forms on the surface.",
+      "Add the onion, garlic, star anise, fish sauce, and soy sauce. Simmer for 1-2 hours or until the meat is tender.",
+      "Remove the meat from the broth, let it cool, then shred it into pieces.",
+      "Strain the broth to remove the bones and spices. Return the broth to the pot and bring it to a boil.",
+      "Add the dissolved cornstarch to the boiling broth to thicken it. Season with salt and pepper to taste.",
+      "Cook the egg noodles according to package instructions. Drain and set aside.",
+      "To serve, place some noodles in a bowl, add the shredded meat, and pour the thickened broth over them.",
+      "Garnish with boiled egg, chopped spring onions, crispy garlic bits, and a squeeze of calamansi or lemon."
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Bicol Express",
+    "ingredients": [
+      "1 kg pork belly, cut into strips",
+      "4 cups coconut milk",
+      "1 cup coconut cream",
+      "6-8 pieces long green chili peppers (siling haba), sliced",
+      "2-4 pieces bird's eye chili (siling labuyo), chopped (optional, for extra spiciness)",
+      "1 head garlic, minced",
+      "1 onion, chopped",
+      "1 thumb-sized piece of ginger, minced",
+      "2 tablespoons shrimp paste (bagoong alamang)",
+      "Salt and pepper to taste"
+    ],
+    "instructions": [
+      "In a large pan, sauté garlic, onion, and ginger until fragrant.",
+      "Add the pork belly strips and cook until they turn slightly brown.",
+      "Pour in the coconut milk and bring to a boil. Reduce heat and simmer for about 20-30 minutes or until the pork is tender.",
+      "Add the shrimp paste and mix well. Continue to simmer until the sauce thickens and the oil starts to separate from the coconut milk.",
+      "Add the long green chili peppers and bird's eye chili (if using). Cook for another 5-10 minutes or until the chilies are tender.",
+      "Pour in the coconut cream and simmer for an additional 5 minutes. Season with salt and pepper to taste.",
+      "Serve hot with steamed rice."
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Laing",
+    "ingredients": [
+      "4 cups dried taro leaves",
+      "1/2 kg pork belly or shrimp (optional)",
+      "4 cups coconut milk",
+      "1 cup coconut cream",
+      "1 onion, chopped",
+      "1 head garlic, minced",
+      "1 thumb-sized piece of ginger, minced",
+      "6-8 pieces long green chili peppers (siling haba), sliced",
+      "2-4 pieces bird's eye chili (siling labuyo), chopped (optional, for extra spiciness)",
+      "2 tablespoons shrimp paste (bagoong alamang)",
+      "Salt and pepper to taste"
+    ],
+    "instructions": [
+      "In a large pot, combine coconut milk, garlic, onion, ginger, and shrimp paste. Bring to a boil.",
+      "Add the pork belly or shrimp (if using) and cook until tender.",
+      "Lower the heat and add the dried taro leaves. Press them down to soak in the coconut milk mixture. Do not stir to avoid releasing the itchy substance from the taro leaves.",
+      "Add the long green chili peppers and bird's eye chili (if using). Simmer for about 15-20 minutes or until the taro leaves are tender and the sauce has thickened.",
+      "Pour in the coconut cream and cook for another 5 minutes. Season with salt and pepper to taste.",
+      "Serve hot with steamed rice."
+    ]
+  }
 ]

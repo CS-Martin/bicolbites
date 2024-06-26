@@ -1,11 +1,11 @@
 'use client'
 
-import { ModeToggle } from "@/components/custom/theme-toggler";
-import { useDisplayRecipes } from "@/hooks/useRecipes";
-import RecipeCard from "./_components/recipe-card";
+import { ModeToggle } from '@/components/custom/theme-toggler'
+import { useDisplayRecipes } from '@/hooks/useRecipes'
+import RecipeCard from './_components/recipe-card'
 
 export default function Home() {
-  const recipes = useDisplayRecipes();
+  const recipes = useDisplayRecipes()
   return (
     <main className="container">
       <ModeToggle />
@@ -14,8 +14,9 @@ export default function Home() {
           id={recipe.id}
           name={recipe.name}
           ingredients={recipe.ingredients}
-          instructions={recipe.instructions} />
+          instructions={recipe.instructions}
+        />
       ))}
     </main>
-  );
+  )
 }

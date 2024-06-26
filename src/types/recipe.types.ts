@@ -1,7 +1,7 @@
 export type Recipe = {
-    id: number,
-    name: string,
-    ingredients: string[],
-    instructions: string[],
-    image?: string
+  id: number
+  name: string
+  ingredients: string[]
+  instructions: string[]
+  image?: string
 }
