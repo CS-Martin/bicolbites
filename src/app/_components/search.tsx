@@ -7,11 +7,11 @@ const HomeSearch: React.FC = (): JSX.Element => {
   const pathname = usePathname();
   const router = useRouter();
 
-  const handleSearch = (key: string) => {
+  const handleSearch = (inputValue: string) => {
     const params = new URLSearchParams(searchParams);
 
-    if (key) {
-      params.set('search', key);
+    if (inputValue) {
+      params.set('search', inputValue);
     } else {
       params.delete('search');
     }

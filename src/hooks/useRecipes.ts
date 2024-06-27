@@ -13,7 +13,6 @@ export const useDisplayRecipes = (
       const recipes = await fetchAllRecipes();
 
       if (searchParams) {
-        console.log('Search', searchParams);
         const filteredRecipes = useFilterSearchedRecipes(searchParams, recipes);
         return setRecipes(filteredRecipes);
       }

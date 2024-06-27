@@ -6,4 +6,9 @@ export type Recipe = {
   instructions: string[];
 };
 
+export type RecipeImage = Pick<Recipe, 'image'> & {
+  alt: string;
+  className?: string;
+};
+
 export type RecipeCard = Pick<Recipe, 'name' | 'description' | 'image'>;
