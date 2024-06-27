@@ -11,15 +11,15 @@ import { RecipeImage as RecipeImageProps } from '@/types/recipe.types';
  * @return {JSX.Element} The rendered image component.
  */
 const RecipeImage: React.FC<RecipeImageProps> = ({
-  image,
-  alt,
-  className
+    image,
+    alt,
+    className
 }): JSX.Element => {
-  return (
-    <>
-      <img src={image} alt={alt} className={className} />
-    </>
-  );
+    return (
+        <>
+            <img src={image} alt={alt} className={className} />
+        </>
+    );
 };
 
 export default RecipeImage;
