@@ -55,7 +55,9 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
                 </section>
 
                 <section className="mt-10">
-                    <h1 className="text-4xl font-bold">{recipes[0]?.name}</h1>
+                    <h1 className="playfair-display-font text-4xl font-bold">
+                        {recipes[0]?.name}
+                    </h1>
                     <Separator className="my-5" />
                     <div>
                         <Label className="text-[14px] text-label">

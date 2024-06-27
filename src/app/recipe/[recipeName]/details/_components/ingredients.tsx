@@ -1,6 +1,5 @@
-import { Checkbox } from '@/components/ui/checkbox';
+import { useState, useEffect } from 'react';
 import { Label } from '@/components/ui/label';
-import { useState } from 'react';
 
 type IngredientsComponentProps = {
     index: number;
@@ -11,10 +10,24 @@ const IngredientsComponent: React.FC<IngredientsComponentProps> = ({
     index,
     ingredients
 }): JSX.Element => {
-    const [isChecked, setIsChecked] = useState(false);
+    /**
+     * TODO:
+     * I want to store the checkboxes states to localstorage
+     * So that, when user refreshes; the checkboxes states remain
+     */
+    const [isChecked, setIsChecked] = useState(() => {
+        // Load the initial state from localStorage if available
+        const savedState = localStorage.getItem(`checkbox-${index}`);
+        return savedState ? JSON.parse(savedState) : false;
+    });
+
+    useEffect(() => {
+        // Save the state to localStorage whenever it changes
+        localStorage.setItem(`checkbox-${index}`, JSON.stringify(isChecked));
+    }, [isChecked, index]);
 
     const handleCheckboxChange = () => {
-        setIsChecked(!isChecked);
+        setIsChecked((prevState: Boolean) => !prevState);
     };
 
     // Regular expression to capture quantity and ingredient

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -79,4 +82,16 @@
     body {
         @apply bg-background text-foreground;
     }
+}
+
+.playfair-display-font {
+    font-family: 'Playfair Display', serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.sacramento-regular {
+    font-family: 'Sacramento', cursive;
+    font-weight: 400;
+    font-style: normal;
 }

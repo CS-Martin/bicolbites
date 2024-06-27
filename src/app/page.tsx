@@ -15,13 +15,14 @@ export default function Home() {
     return (
         <main>
             <section className="relative flex h-[450px] animate-fade items-center justify-center">
-                <h1 className="absolute z-10 text-[46px] font-bold">
-                    NagaBites
+                <h1 className="playfair-display-font absolute z-10 animate-fade text-8xl font-bold text-white">
+                    Naga <span className="sacramento-regular">Bites</span>{' '}
+                    Recipes
                 </h1>
                 <img
                     src="/images/people-enjoying-mexican-barbecue.jpg"
                     alt="test"
-                    className="h-full w-full object-cover contrast-[1.25] backdrop-brightness-75 transition-transform duration-300 ease-in-out"
+                    className="h-full w-full animate-fade object-cover contrast-[0.8] backdrop-brightness-75 transition-transform duration-300 ease-in-out"
                 />
             </section>
 
@@ -34,8 +35,8 @@ export default function Home() {
             <section className="container mt-10 pb-20">
                 <div
                     id="recipes-anchor"
-                    className="flex items-center justify-between">
-                    <Label className="flex gap-x-1 font-normal text-gray-400">
+                    className="mb-3 flex items-center justify-between">
+                    <Label className="flex gap-x-1 font-normal text-label">
                         Results:
                         <Suspense fallback={<Label>Loading...</Label>}>
                             <ResultsLabel />
@@ -69,7 +70,7 @@ function RecipeGrid() {
     }
 
     return (
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        <div className="grid animate-fade grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {recipes.map((recipe: Recipe) => (
                 <RecipeCard
                     key={recipe.name}

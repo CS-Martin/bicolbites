@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, EB_Garamond } from 'next/font/google';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import HeaderNavbar from '@/components/custom/header';
 

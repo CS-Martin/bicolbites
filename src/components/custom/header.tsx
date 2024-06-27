@@ -41,8 +41,11 @@ const HeaderNavbar = () => {
                 <nav
                     className={`fixed left-0 top-0 z-50 flex h-[150px] w-full items-center transition-all duration-500 ease-in-out ${isFixed ? 'h-[80px] bg-black bg-opacity-90 shadow-lg' : 'bg-transparent'}`}>
                     <div className="container flex h-16 items-center justify-between md:h-20">
-                        <Link href="/" className="text-white">
-                            Logo
+                        <Link
+                            href="/"
+                            className="playfair-display-font text-2xl text-white">
+                            Naga{' '}
+                            <span className="sacramento-regular">Bites</span>
                         </Link>
 
                         {/* Navigation */}
@@ -67,8 +70,11 @@ const HeaderNavbar = () => {
                 <nav
                     className={`fixed left-0 top-0 z-50 flex h-[80px] w-full items-center bg-black transition-all duration-500 ease-in-out`}>
                     <div className="flex h-16 w-full items-center justify-between px-5 md:h-20">
-                        <Link href="/" className="text-white">
-                            Logo
+                        <Link
+                            href="/"
+                            className="playfair-display-font text-2xl text-white transition-all duration-500">
+                            Naga{' '}
+                            <span className="sacramento-regular">Bites</span>
                         </Link>
 
                         {/* Navigation */}
