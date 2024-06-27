@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Recipe } from '@/types/recipe.types';
 import { fetchAllRecipes } from '@/services/recipes-api';
+import { filterSearchedRecipes } from '@/lib/utils';
 
 export const useDisplayRecipes = (
     searchParams: string
@@ -13,7 +14,7 @@ export const useDisplayRecipes = (
             const recipes = await fetchAllRecipes();
 
             if (searchParams) {
-                const filteredRecipes = useFilterSearchedRecipes(
+                const filteredRecipes = filterSearchedRecipes(
                     searchParams,
                     recipes
                 );
@@ -28,15 +29,4 @@ export const useDisplayRecipes = (
     }, [searchParams]);
 
     return { recipes, loading };
-};
-
-export const useFilterSearchedRecipes = (
-    searchParams: string,
-    recipes: Recipe[]
-): Recipe[] => {
-    const searchedRecipes = recipes.filter((recipe) =>
-        recipe.name.toLowerCase().includes(searchParams.toLowerCase())
-    );
-
-    return searchedRecipes as Recipe[];
 };
