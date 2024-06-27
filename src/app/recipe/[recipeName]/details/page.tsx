@@ -9,6 +9,12 @@ import RecipePageBreadcrumbs from './_components/breadcrumbs';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import IngredientsComponent from './_components/ingredients';
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger
+} from '@/components/ui/accordion';
 
 const RecipeDetailsPage: React.FC = (): JSX.Element => {
     // Get http://localhost:3000/recipe/kinalas/details
@@ -26,7 +32,7 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
 
     return (
         <main className="container mt-[100px] md:px-28">
-            <div className="relative grid h-[100vh] gap-10 lg:grid-cols-[1fr_2fr]">
+            <div className="relative grid h-[100vh] lg:grid-cols-[1fr_2fr]">
                 <section className="">
                     <div className="lg:fixed">
                         <RecipePageBreadcrumbs pageName={recipes[0]?.name} />
@@ -37,8 +43,7 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
                             glarePosition="all"
                             glareBorderRadius="10px"
                             transitionSpeed={7000}
-                            scale={1.02}
-                        >
+                            scale={1.02}>
                             <RecipeImage
                                 image={recipes[0]?.image}
                                 alt={recipes[0]?.name}
@@ -58,18 +63,41 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
                         <p className="mt-1">{recipes[0]?.description}</p>
                     </div>
 
-                    <div className="mt-10">
-                        <h1>Ingredients</h1>
-                        <div className="gap-2">
-                            {recipes[0]?.ingredients.map(
-                                (ingredient, index) => (
-                                    <IngredientsComponent
-                                        key={index}
-                                        ingredients={ingredient}
-                                    />
-                                )
-                            )}
-                        </div>
+                    <div className="mt-7 rounded-lg border px-3">
+                        <Accordion type="single" collapsible>
+                            <AccordionItem
+                                className="border-none"
+                                value="ingredients">
+                                <AccordionTrigger>Ingredients</AccordionTrigger>
+                                <AccordionContent>
+                                    {recipes[0]?.ingredients.map(
+                                        (ingredient, index) => (
+                                            <IngredientsComponent
+                                                key={index}
+                                                index={index}
+                                                ingredients={ingredient}
+                                            />
+                                        )
+                                    )}
+                                </AccordionContent>
+                            </AccordionItem>
+                            <AccordionItem
+                                className="border-none"
+                                value="ingredients">
+                                <AccordionTrigger>Ingredients</AccordionTrigger>
+                                <AccordionContent>
+                                    {recipes[0]?.ingredients.map(
+                                        (ingredient, index) => (
+                                            <IngredientsComponent
+                                                key={index}
+                                                index={index}
+                                                ingredients={ingredient}
+                                            />
+                                        )
+                                    )}
+                                </AccordionContent>
+                            </AccordionItem>
+                        </Accordion>
                     </div>
                 </section>
             </div>

@@ -39,8 +39,7 @@ const HeaderNavbar = () => {
         <>
             {pathname === '/' ? (
                 <nav
-                    className={`fixed left-0 top-0 z-50 flex h-[150px] w-full items-center transition-all duration-500 ease-in-out ${isFixed ? 'h-[80px] bg-black bg-opacity-90 shadow-lg' : 'bg-transparent'}`}
-                >
+                    className={`fixed left-0 top-0 z-50 flex h-[150px] w-full items-center transition-all duration-500 ease-in-out ${isFixed ? 'h-[80px] bg-black bg-opacity-90 shadow-lg' : 'bg-transparent'}`}>
                     <div className="container flex h-16 items-center justify-between md:h-20">
                         <div className="text-white">Logo</div>
 
@@ -48,15 +47,13 @@ const HeaderNavbar = () => {
                         <div className={`flex items-center gap-x-3 md:gap-x-8`}>
                             <a
                                 href="#"
-                                className={`hidden text-white md:block`}
-                            >
+                                className={`hidden text-white md:block`}>
                                 {' '}
                                 Home
                             </a>
                             <a
                                 href="#"
-                                className={`hidden text-white md:block`}
-                            >
+                                className={`hidden text-white md:block`}>
                                 {' '}
                                 Recipes
                             </a>
@@ -66,8 +63,7 @@ const HeaderNavbar = () => {
                 </nav>
             ) : (
                 <nav
-                    className={`fixed left-0 top-0 z-50 flex h-[80px] w-full items-center bg-black transition-all duration-500 ease-in-out`}
-                >
+                    className={`fixed left-0 top-0 z-50 flex h-[80px] w-full items-center bg-black transition-all duration-500 ease-in-out`}>
                     <div className="flex h-16 w-full items-center justify-between px-5 md:h-20">
                         <Link href="/" className="text-white">
                             Logo
@@ -77,15 +73,13 @@ const HeaderNavbar = () => {
                         <div className={`flex items-center gap-x-3 md:gap-x-8`}>
                             <a
                                 href="#"
-                                className={`hidden text-white md:block`}
-                            >
+                                className={`hidden text-white md:block`}>
                                 {' '}
                                 Home
                             </a>
                             <a
                                 href="#"
-                                className={`hidden text-white md:block`}
-                            >
+                                className={`hidden text-white md:block`}>
                                 {' '}
                                 Recipes
                             </a>

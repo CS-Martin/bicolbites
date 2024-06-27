@@ -23,8 +23,7 @@ const RecipePageBreadcrumbs: React.FC<RecipePageBreadcrumbsProps> = ({
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                     <BreadcrumbLink
-                        href={`recipe/${pageName?.toLowerCase()}/details`}
-                    >
+                        href={`recipe/${pageName?.toLowerCase()}/details`}>
                         {pageName}
                     </BreadcrumbLink>
                 </BreadcrumbItem>
