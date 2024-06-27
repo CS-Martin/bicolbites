@@ -16,7 +16,7 @@ export default function Home() {
         <main>
             <section className="relative flex h-[450px] animate-fade items-center justify-center">
                 <h1 className="playfair-display-font absolute z-10 animate-fade text-8xl font-bold text-white">
-                    Naga <span className="sacramento-regular">Bites</span>{' '}
+                    Bicol <span className="sacramento-regular">Bites</span>{' '}
                     Recipes
                 </h1>
                 <img
@@ -70,14 +70,15 @@ function RecipeGrid() {
     }
 
     return (
-        <div className="grid animate-fade grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        <div className="masonry-grid">
             {recipes.map((recipe: Recipe) => (
-                <RecipeCard
-                    key={recipe.name}
-                    name={recipe.name}
-                    description={recipe.description}
-                    image={recipe.image}
-                />
+                <div className="masonry-item" key={recipe.name}>
+                    <RecipeCard
+                        name={recipe.name}
+                        description={recipe.description}
+                        image={recipe.image}
+                    />
+                </div>
             ))}
         </div>
     );

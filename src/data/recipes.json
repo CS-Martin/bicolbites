@@ -139,5 +139,234 @@
             "Stir in the coconut cream and simmer for an additional 2-3 minutes. Season with salt and pepper to taste (optional).",
             "Serve hot with steamed rice."
         ]
+    },
+    {
+        "name": "Puto Buko",
+        "description": "A steamed rice cake from Bicol made with grated young coconut meat and glutinous rice flour. It's known for its chewy texture and slightly sweet flavor.",
+        "image": "https://www.recipesbynora.com/wp-content/uploads/2024/02/Puto-with-Cheese-Recipe.jpg",
+        "ingredients": [
+            "2 cups glutinous rice flour",
+            "1 cup young coconut meat, grated",
+            "1 cup white sugar",
+            "1 teaspoon baking powder",
+            "1/2 teaspoon salt",
+            "1 1/2 cups water",
+            "Banana leaves, cut into squares (for wrapping)"
+        ],
+        "instructions": [
+            "In a large bowl, combine glutinous rice flour, young coconut meat, sugar, baking powder, and salt. Mix well.",
+            "Gradually add water while mixing until you get a thick and sticky batter.",
+            "Prepare banana leaves by lining them with small molds or cups. Pour the batter into the molds.",
+            "Steam for 20-25 minutes or until cooked through. A toothpick inserted into the center should come out clean.",
+            "Let cool slightly before serving."
+        ]
+    },
+    {
+        "name": "Kandingga",
+        "description": "A Bicolano delicacy made with pork blood, pork intestines, and spices. It's a rich and flavorful dish that's often served during special occasions.",
+        "image": "https://i.pinimg.com/564x/75/c3/c9/75c3c92466a6dfaf055299d4bde45ab8.jpg",
+        "ingredients": [
+            "500 grams pork blood",
+            "500 grams pork intestines, cleaned and cut into pieces",
+            "2 onions, chopped",
+            "4 cloves garlic, minced",
+            "1 tablespoon ginger, grated",
+            "1 tablespoon chili powder",
+            "1 teaspoon salt",
+            "1/2 teaspoon pepper",
+            "1 cup coconut milk"
+        ],
+        "instructions": [
+            "In a pot, cook pork blood until it solidifies. Break it into small pieces and set aside.",
+            "In the same pot, saute onions, garlic, and ginger until fragrant.",
+            "Add pork intestines and cook until browned.",
+            "Stir in chili powder, salt, and pepper.",
+            "Pour in coconut milk and bring to a boil.",
+            "Reduce heat and simmer for 30-45 minutes or until the intestines are tender and the sauce has thickened.",
+            "Add cooked pork blood and stir to combine.",
+            "Serve hot with rice."
+        ]
+    },
+    {
+        "name": "Sinantolan",
+        "description": "A Bicolano soup made with pork, malunggay leaves, and spices. It's a nutritious and flavorful dish that's known for its health benefits.",
+        "image": "https://panlasangpinoy.com/wp-content/uploads/2017/09/Ginataang-Santol-Sinantolan.jpg",
+        "ingredients": [
+            "500 grams pork, cut into pieces",
+            "2 cups malunggay leaves, stripped",
+            "1 onion, chopped",
+            "4 cloves garlic, minced",
+            "1 tablespoon ginger, grated",
+            "1 tablespoon salt",
+            "1/2 teaspoon pepper",
+            "6 cups water"
+        ],
+        "instructions": [
+            "In a pot, heat oil and saute onion and garlic until fragrant.",
+            "Add pork and cook until browned on all sides.",
+            "Pour in water and bring to a boil.",
+            "Reduce heat and simmer for 30-45 minutes or until the pork is tender.",
+            "Add malunggay leaves, salt, and pepper. Cook for a few more minutes until the malunggay leaves are wilted.",
+            "Serve hot with rice."
+        ]
+    },
+    {
+        "name": "Ginataang Langka",
+        "description": "A Bicolano dessert made with jackfruit, coconut milk, and sugar. It's a rich and sweet dish that's perfect for ending a meal.",
+        "image": "https://www.foxyfolksy.com/wp-content/uploads/2022/07/ginataang-langka.jpg",
+        "ingredients": [
+            "1 ripe jackfruit, cut into pieces",
+            "1 cup coconut milk",
+            "1/2 cup sugar",
+            "1 teaspoon salt",
+            "1/2 teaspoon vanilla extract"
+        ],
+        "instructions": [
+            "In a pot, combine jackfruit, coconut milk, sugar, salt, and vanilla extract. Bring to a boil.",
+            "Reduce heat and simmer for 15-20 minutes or until the jackfruit is tender and the sauce has thickened.",
+            "Serve warm or cold."
+        ]
+    },
+    {
+        "name": "Bicolano Adobo sa Gata",
+        "description": "A unique take on the classic Filipino adobo dish. This version uses coconut milk instead of vinegar, creating a richer and creamier flavor profile.",
+        "image": "https://i.pinimg.com/564x/65/55/e4/6555e4e9d4968f3212a92d9d52549888.jpg",
+        "ingredients": [
+            "500 grams chicken or pork, cut into pieces",
+            "1 cup coconut milk",
+            "1/4 cup soy sauce",
+            "1 onion, chopped",
+            "4 cloves garlic, minced",
+            "1 bay leaf",
+            "1 teaspoon black peppercorns",
+            "Salt to taste"
+        ],
+        "instructions": [
+            "In a pot, heat oil and saute onion and garlic until fragrant.",
+            "Add chicken or pork and cook until browned on all sides.",
+            "Pour in soy sauce, coconut milk, water (just enough to cover the meat), bay leaf, and peppercorns. Bring to a boil.",
+            "Reduce heat and simmer for 30-45 minutes or until the meat is tender and the sauce has thickened.",
+            "Season with salt to taste.",
+            "Serve hot with rice."
+        ]
+    },
+    {
+        "name": "Baduya",
+        "description": "A Bicolano dish also known as Maruya or Baduya for non-Bicolanos. It's a fritter made with thinly sliced saba bananas dipped in batter and deep-fried until golden brown and crispy.",
+        "image": "https://scontent.fmnl4-2.fna.fbcdn.net/v/t1.6435-9/67161992_2314931765503233_3041194581984018432_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeE4veYuSxX2jIFM9LnlgCUljEZ0FnJC-4KMRnQWckL7gkrXunu0P3Jdf4FXGovoNk89O1fmztrXWXZUugmYeI6w&_nc_ohc=i3PNtJqj9jIQ7kNvgFjBKyN&_nc_ht=scontent.fmnl4-2.fna&oh=00_AYAUeR-LLf7HrP7puLn0DZ7DjD2A9oEzmuXmUl6esp6LRg&oe=66A530AD",
+        "ingredients": [
+            "5-6 ripe but firm saba bananas, peeled and sliced lengthwise into 1/4-inch thick pieces",
+            "1 cup all-purpose flour",
+            "1/4 cup sugar",
+            "1/2 teaspoon baking powder",
+            "1/4 teaspoon salt",
+            "1 egg, beaten",
+            "1/2 cup milk (or water)",
+            "Vegetable oil for deep frying"
+        ],
+        "instructions": [
+            "In a large bowl, mix together flour, sugar, baking powder, and salt.",
+            "In a separate bowl, whisk together egg and milk (or water).",
+            "Gradually add the wet ingredients to the dry ingredients, mixing until just combined. Do not overmix.",
+            "Heat oil in a deep pot or fryer to 350°F (175°C).",
+            "Dip each banana slice into the batter, coating it evenly.",
+            "Carefully drop the coated banana slice into the hot oil and fry for 2-3 minutes or until golden brown and crispy.",
+            "Drain on paper towels to remove excess oil.",
+            "Serve hot with your favorite dipping sauce, like chocolate syrup, condensed milk, or vinegar with sugar."
+        ]
+    },
+    {
+        "name": "Marcasotes",
+        "description": "A Bicolano steamed cake traditionally made with just eggs, sugar, and flower petals (often gumamela or rose) for fragrance. Modern variations may include additional ingredients like vanilla extract or cheese.",
+        "image": "https://scontent.fmnl4-2.fna.fbcdn.net/v/t39.30808-6/409454747_784565657018088_6735970278461129239_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFgFdxogNttCmQng4X1ug1IDWTPY1UmLpcNZM9jVSYul89K7vR8hd-GRbQai-HXrLiBNqrS1JrxgRMbPk5XYBUE&_nc_ohc=JbtyCE2XhG8Q7kNvgG2nf6E&_nc_ht=scontent.fmnl4-2.fna&oh=00_AYB0PRDw7Bn3nJuZFr3_VZUt3IxacBQe-bdJAN525_on8w&oe=668368BA",
+        "ingredients": [
+            "5 large eggs, separated",
+            "1 cup granulated sugar",
+            "1/4 cup rose petals (or gumamela petals), finely chopped (optional)",
+            "1/2 teaspoon vanilla extract (optional)"
+        ],
+        "instructions": [
+            "Preheat a steamer to medium heat.",
+            "In a large bowl, whisk together egg yolks and sugar until light and fluffy. You can use a hand mixer for this step.",
+            "If using, gently fold in the chopped rose petals or gumamela petals and vanilla extract (optional).",
+            "In a separate bowl, using clean beaters, whip egg whites until stiff peaks form. Be careful not to overbeat.",
+            "Gently fold the egg whites into the egg yolk mixture using a spatula. Do not overmix, as you want to maintain air in the batter for a fluffy cake.",
+            "Lightly grease small cupcake molds or paper muffin cups. You can also use small bowls or ramekins.",
+            "Fill the molds about ¾ full with the batter.",
+            "Steam the marcasotes for 15-20 minutes, or until a toothpick inserted into the center comes out clean. Be careful not to oversteam, as they can become tough.",
+            "Let the marcasotes cool slightly before serving. You can enjoy them warm or at room temperature."
+        ]
+    },
+    {
+        "name": "Picadillo",
+        "description": "A Bicolano fish dish made with stuffed tilapia (or other fish) with a flavorful filling of tomatoes, onions, garlic, ginger, and chilies. It's then cooked in coconut milk for a rich and slightly spicy dish.",
+        "image": "https://www.foxyfolksy.com/wp-content/uploads/2021/06/picadillo-recipe.jpg",
+        "ingredients": [
+            "1 whole tilapia (or other white fish), cleaned and scaled",
+            "1/2 cup chopped tomatoes",
+            "1/2 onion, chopped",
+            "2 cloves garlic, minced",
+            "1 inch ginger, minced",
+            "1-2 chilies (depending on your spice preference), chopped",
+            "Salt and pepper to taste",
+            "1 cup coconut milk",
+            "Vegetable oil"
+        ],
+        "instructions": [
+            "Prepare the stuffing: In a bowl, combine chopped tomatoes, onion, garlic, ginger, chilies, salt, and pepper. Mix well.",
+            "Stuff the fish: Carefully make a pocket in the belly of the fish. Stuff it with the prepared mixture. You can use toothpicks to secure the opening if needed.",
+            "Heat oil in a pan over medium heat. Sear the fish on both sides until golden brown.",
+            "Pour in the coconut milk and bring to a simmer. Reduce heat and cover the pan. Simmer for 15-20 minutes or until the fish is cooked through and the sauce has thickened slightly.",
+            "Carefully transfer the fish to a serving plate. Spoon the coconut milk sauce over the fish.",
+            "Serve hot with rice and enjoy!"
+        ]
+    },
+    {
+        "name": "Biniribid",
+        "description": "A Bicolano sweet snack or dessert made with rice flour and coconut milk, twisted into a rope-like shape, and deep-fried. It's known for its chewy texture, golden brown color, and a hint of sweetness. Biniribid can be enjoyed plain or dusted with sugar or glazed with caramelized brown sugar.",
+        "image": "https://www.theexodoers.com/wp-content/uploads/2022/06/Biniribid-or-Chakoy.jpg",
+        "ingredients": [
+            "2 cups glutinous rice flour",
+            "1 cup coconut milk",
+            "1/4 cup water (or more depending on consistency)",
+            "1/4 cup white sugar",
+            "Vegetable oil for deep frying",
+            "White sugar or brown sugar glaze (optional)"
+        ],
+        "instructions": [
+            "In a large bowl, combine glutinous rice flour, coconut milk, and white sugar. Mix well until you get a sticky dough. Gradually add water, a tablespoon at a time, until you achieve a manageable dough that's not too sticky.",
+            "Pinch off a small amount of dough and roll it into a long, thin rope about 1/4 inch thick. Twist the rope to create a spiral shape.",
+            "Heat oil in a deep pot or fryer to 350°F (175°C).",
+            "Carefully drop the twisted dough into the hot oil and fry for 2-3 minutes or until golden brown. Fry in batches to avoid overcrowding the pot.",
+            "Drain on paper towels to remove excess oil.",
+            "Enjoy plain or dust with white sugar while still warm. For a richer flavor, you can coat the biniribid with a brown sugar glaze (recipe below).",
+            "**Optional Brown Sugar Glaze:** In a small saucepan, combine 1/4 cup brown sugar and 1 tablespoon water. Heat over medium heat, stirring constantly, until the sugar dissolves and thickens slightly. Dip the fried biniribid in the glaze or drizzle it over the top."
+        ]
+    },
+    {
+        "name": "Kusido",
+        "description": "A Bicolano soup-based dish featuring fish and vegetables cooked in a slightly sour and flavorful broth. It's a staple dish in Bicol cuisine, known for its comforting and satisfying taste.",
+        "image": "https://i0.wp.com/www.angsarap.net/wp-content/uploads/2022/08/Kusidong-Isda.jpg?w=720&ssl=1",
+        "ingredients": [
+            "500 grams fish (suitable options include malasugi, maya-maya, hito, lapu-lapu, or your preferred type)",
+            "4 cups water",
+            "2 tomatoes, chopped",
+            "1 onion, chopped",
+            "4 cloves garlic, minced",
+            "1 cup vegetables (common choices include sweet potato tops, kangkong (water spinach), okra, or a combination)",
+            "1-2 stalks sili haba (long green chili pepper), according to your spice preference",
+            "Salt and pepper to taste",
+            "1/4 cup kalamansi juice (or to taste)"
+        ],
+        "instructions": [
+            "In a pot, bring water to a boil.",
+            "Add the fish and cook for a few minutes until partially cooked. Set aside.",
+            "In the same pot, saute onion and garlic until fragrant.",
+            "Add tomatoes and simmer for a few minutes until softened and releasing their juices.",
+            "Pour in the kalamansi juice and season with salt and pepper. Adjust the amount of kalamansi juice according to your desired level of sourness.",
+            "Add the vegetables and chili pepper. Simmer for 5-7 minutes or until the vegetables are tender-crisp.",
+            "Return the partially cooked fish to the pot and simmer for another 5-7 minutes or until the fish is fully cooked through.",
+            "Serve hot with rice and enjoy!"
+        ]
     }
 ]

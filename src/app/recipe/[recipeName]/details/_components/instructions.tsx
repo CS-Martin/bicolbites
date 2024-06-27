@@ -6,6 +6,16 @@ type InstructionsComponentProps = {
     instructions: string;
 };
 
+/**
+ * Renders an instruction component for a recipe, with a checkbox to mark the instruction as completed.
+ * The checkbox state is stored in local storage so that it persists when the user refreshes the page.
+ *
+ * @param {InstructionsComponentProps} props - The component props.
+ * @param {number} props.index - The index of the instruction.
+ * @param {string} props.recipeName - The name of the recipe.
+ * @param {string} props.instructions - The instructions for the recipe.
+ * @return {JSX.Element} The rendered instruction component.
+ */
 const InstructionsComponent: React.FC<InstructionsComponentProps> = ({
     index,
     recipeName,

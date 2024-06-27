@@ -39,12 +39,10 @@ const HeaderNavbar = () => {
         <>
             {pathname === '/' ? (
                 <nav
-                    className={`fixed left-0 top-0 z-50 flex h-[150px] w-full items-center transition-all duration-500 ease-in-out ${isFixed ? 'h-[80px] bg-black bg-opacity-90 shadow-lg' : 'bg-transparent'}`}>
-                    <div className="container flex h-16 items-center justify-between md:h-20">
-                        <Link
-                            href="/"
-                            className="playfair-display-font text-2xl text-white">
-                            Naga{' '}
+                    className={`fixed left-0 top-0 z-50 flex h-[150px] w-full items-center transition-all duration-500 ease-in-out ${isFixed ? 'h-[80px] bg-black bg-opacity-80 shadow-lg' : 'bg-transparent'}`}>
+                    <div className="playfair-display-font container flex h-16 items-center justify-between md:h-20">
+                        <Link href="/" className="text-2xl text-white">
+                            Bicol{' '}
                             <span className="sacramento-regular">Bites</span>
                         </Link>
 
