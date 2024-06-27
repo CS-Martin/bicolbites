@@ -2,10 +2,13 @@
 
 import RecipeImage from '@/components/custom/recipe-image';
 import { useDisplayRecipes } from '@/hooks/useRecipes';
-import { Recipe } from '@/types/recipe.types';
 import { usePathname } from 'next/navigation';
 import React from 'react';
+import Tilt from 'react-parallax-tilt';
 import RecipePageBreadcrumbs from './_components/breadcrumbs';
+import { Label } from '@/components/ui/label';
+import { Separator } from '@/components/ui/separator';
+import IngredientsComponent from './_components/ingredients';
 
 const RecipeDetailsPage: React.FC = (): JSX.Element => {
     // Get http://localhost:3000/recipe/kinalas/details
@@ -27,19 +30,48 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
                 <section className="">
                     <div className="lg:fixed">
                         <RecipePageBreadcrumbs pageName={recipes[0]?.name} />
-                        <RecipeImage
-                            image={recipes[0]?.image}
-                            alt={recipes[0]?.name}
-                            className={`mt-5 w-full rounded-md object-cover shadow-md contrast-[1.15] transition-transform duration-300 ease-in-out lg:h-[530px] lg:w-[350px]`}
-                        />
+                        <Tilt
+                            glareEnable={true}
+                            glareMaxOpacity={0.1}
+                            glareColor="lightblue"
+                            glarePosition="all"
+                            glareBorderRadius="10px"
+                            transitionSpeed={7000}
+                            scale={1.02}
+                        >
+                            <RecipeImage
+                                image={recipes[0]?.image}
+                                alt={recipes[0]?.name}
+                                className={`mt-5 w-full rounded-md object-cover shadow-md contrast-[1.15] transition-transform duration-300 ease-in-out lg:h-[530px] lg:w-[350px]`}
+                            />
+                        </Tilt>
                     </div>
                 </section>
-                {recipes.map((recipe) => (
-                    <div className="mt-9" key={recipe.name}>
-                        <h1>{recipe.name}</h1>
-                        <p>{recipe.description}</p>
+
+                <section className="mt-10">
+                    <h1 className="text-4xl font-bold">{recipes[0]?.name}</h1>
+                    <Separator className="my-5" />
+                    <div>
+                        <label className="text-[14px] text-slate-600">
+                            Description:
+                        </label>
+                        <p className="mt-1">{recipes[0]?.description}</p>
                     </div>
-                ))}
+
+                    <div className="mt-10">
+                        <h1>Ingredients</h1>
+                        <div className="grid grid-cols-2 items-center gap-2">
+                            {recipes[0]?.ingredients.map(
+                                (ingredient, index) => (
+                                    <IngredientsComponent
+                                        key={index}
+                                        ingredients={ingredient}
+                                    />
+                                )
+                            )}
+                        </div>
+                    </div>
+                </section>
             </div>
         </main>
     );
