@@ -3,11 +3,13 @@ import { Label } from '@/components/ui/label';
 
 type IngredientsComponentProps = {
     index: number;
+    recipeName: string;
     ingredients: string;
 };
 
 const IngredientsComponent: React.FC<IngredientsComponentProps> = ({
     index,
+    recipeName,
     ingredients
 }): JSX.Element => {
     /**
@@ -17,13 +19,18 @@ const IngredientsComponent: React.FC<IngredientsComponentProps> = ({
      */
     const [isChecked, setIsChecked] = useState(() => {
         // Load the initial state from localStorage if available
-        const savedState = localStorage.getItem(`checkbox-${index}`);
+        const savedState = localStorage.getItem(
+            `${'ig-' + recipeName}-${index}`
+        );
         return savedState ? JSON.parse(savedState) : false;
     });
 
     useEffect(() => {
         // Save the state to localStorage whenever it changes
-        localStorage.setItem(`checkbox-${index}`, JSON.stringify(isChecked));
+        localStorage.setItem(
+            `${'ig-' + recipeName}-${index}`,
+            JSON.stringify(isChecked)
+        );
     }, [isChecked, index]);
 
     const handleCheckboxChange = () => {
@@ -42,7 +49,7 @@ const IngredientsComponent: React.FC<IngredientsComponentProps> = ({
     return (
         <div className="flex justify-between border-b px-3 py-4">
             <div className="flex gap-x-2">
-                <p className="w-[60px] text-4xl font-bold">
+                <p className="playfair-display-font w-[60px] text-4xl font-bold">
                     {ingredientsLength >= 10
                         ? `${String(index + 1).padStart(2, '0')}`
                         : 'Ingredient'}

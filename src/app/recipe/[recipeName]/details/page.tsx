@@ -82,6 +82,7 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
                                             <IngredientsComponent
                                                 key={index}
                                                 index={index}
+                                                recipeName={recipes[0]?.name}
                                                 ingredients={ingredient}
                                             />
                                         )
@@ -100,6 +101,7 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
                                             <InstructionsComponent
                                                 key={index}
                                                 index={index}
+                                                recipeName={recipes[0]?.name}
                                                 instructions={instruction}
                                             />
                                         )

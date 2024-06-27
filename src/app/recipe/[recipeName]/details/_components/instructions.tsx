@@ -1,25 +1,46 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type InstructionsComponentProps = {
     index: number;
+    recipeName: string;
     instructions: string;
 };
 
 const InstructionsComponent: React.FC<InstructionsComponentProps> = ({
     index,
+    recipeName,
     instructions
 }): JSX.Element => {
-    const [isChecked, setIsChecked] = useState(false);
+    /**
+     * TODO:
+     * I want to store the checkboxes states to localstorage
+     * So that, when user refreshes; the checkboxes states remain
+     */
+    const [isChecked, setIsChecked] = useState(() => {
+        // Load the initial state from localStorage if available
+        const savedState = localStorage.getItem(
+            `${'in-' + recipeName}-${index}`
+        );
+        return savedState ? JSON.parse(savedState) : false;
+    });
+
+    useEffect(() => {
+        // Save the state to localStorage whenever it changes
+        localStorage.setItem(
+            `${'in-' + recipeName}-${index}`,
+            JSON.stringify(isChecked)
+        );
+    }, [isChecked, index]);
 
     const handleCheckboxChange = () => {
-        setIsChecked(!isChecked);
+        setIsChecked((prevState: Boolean) => !prevState);
     };
 
     const ingredientsLength: number = instructions.length;
 
     return (
         <div className="grid border-b border-border px-3 py-4 md:grid-cols-[0.13fr_0.07fr_1fr] lg:grid-cols-[0.1fr_0.05fr_1fr]">
-            <p className="text-4xl font-bold">
+            <p className="playfair-display-font text-4xl font-bold">
                 {ingredientsLength >= 10
                     ? `${String(index + 1).padStart(2, '0')}`
                     : 'Ingredient'}
