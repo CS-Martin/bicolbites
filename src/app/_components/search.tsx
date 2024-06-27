@@ -29,7 +29,7 @@ const HomeSearch: React.FC = (): JSX.Element => {
       <Input
         type="text"
         placeholder="Search for recipes"
-        className="border-none py-7 ps-10 focus-visible:ring-transparent"
+        className="border-none py-7 ps-4 focus-visible:ring-transparent md:ps-8"
         onChange={(e) => handleSearch(e.target.value)}
         defaultValue={searchParams.get('search')?.toString()}
       />

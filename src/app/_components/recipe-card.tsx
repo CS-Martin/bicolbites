@@ -3,7 +3,7 @@
  * Note: turns out the you can pass 'use client' to children
  */
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import { RecipeCard as RecipeCardProps } from '@/types/recipe.types';
 import Link from 'next/link';
 import RecipeImage from '@/components/custom/recipe-image';

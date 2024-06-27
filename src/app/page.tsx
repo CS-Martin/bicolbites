@@ -7,8 +7,9 @@ import { useSearchParams } from 'next/navigation';
 import { Separator } from '@/components/ui/separator';
 import { Label } from '@/components/ui/label';
 import SortRecipesButton from './_components/sort';
-import { RecipeCardSkeleton } from '@/components/custom/skeletons';
 import { Recipe } from '@/types/recipe.types';
+import { RecipeCardSkeleton } from './_components/skeletons';
+import { Suspense } from 'react';
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -20,7 +21,7 @@ export default function Home() {
     <main>
       {/* <ModeToggle /> */}
       <section className="relative flex h-[450px] animate-fade items-center justify-center">
-        <h1 className="absolute z-10 text-[100px] font-bold">NagaBites</h1>
+        <h1 className="absolute z-10 text-[46px] font-bold">NagaBites</h1>
         <img
           src="/images/people-enjoying-mexican-barbecue.jpg"
           alt="test"
@@ -40,17 +41,19 @@ export default function Home() {
           <SortRecipesButton />
         </div>
         <Separator className="my-3" />
-        <div className="grid grid-cols-5 gap-3">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
           {loading ? (
             <RecipeCardSkeleton />
           ) : (
             recipes.map((recipe: Recipe) => (
-              <RecipeCard
-                key={recipe.name}
-                name={recipe.name}
-                description={recipe.description}
-                image={recipe.image}
-              />
+              <Suspense fallback={<RecipeCardSkeleton />}>
+                <RecipeCard
+                  key={recipe.name}
+                  name={recipe.name}
+                  description={recipe.description}
+                  image={recipe.image}
+                />
+              </Suspense>
             ))
           )}
         </div>
