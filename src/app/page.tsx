@@ -10,13 +10,22 @@ import SortRecipesButton from './_components/sort';
 import { Recipe } from '@/types/recipe.types';
 import { RecipeCardSkeleton } from './_components/skeletons';
 import { Suspense } from 'react';
+import Tilt from 'react-parallax-tilt';
+import { Playfair_Display, Sacramento } from 'next/font/google';
+
+const PlayfairDisplay = Playfair_Display({ subsets: ['latin'] });
+const SacramentoRegular = Sacramento({ weight: '400', subsets: ['latin'] });
 
 export default function Home() {
     return (
         <main>
             <section className="relative flex h-[450px] animate-fade items-center justify-center">
-                <h1 className="playfair-display-font absolute z-10 animate-fade text-8xl font-bold text-white">
-                    Bicol <span className="sacramento-regular">Bites</span>{' '}
+                <h1
+                    className={`${PlayfairDisplay.className} absolute z-10 animate-fade text-8xl font-bold text-white`}>
+                    Bicol{' '}
+                    <span className={`${SacramentoRegular.className}`}>
+                        Bites
+                    </span>{' '}
                     Recipes
                 </h1>
                 <img
@@ -73,11 +82,20 @@ function RecipeGrid() {
         <div className="masonry-grid">
             {recipes.map((recipe: Recipe) => (
                 <div className="masonry-item" key={recipe.name}>
-                    <RecipeCard
-                        name={recipe.name}
-                        description={recipe.description}
-                        image={recipe.image}
-                    />
+                    <Tilt
+                        glareEnable={true}
+                        glareMaxOpacity={0.1}
+                        glareColor="lightblue"
+                        glarePosition="all"
+                        glareBorderRadius="10px"
+                        transitionSpeed={10000}
+                        scale={1.01}>
+                        <RecipeCard
+                            name={recipe.name}
+                            description={recipe.description}
+                            image={recipe.image}
+                        />
+                    </Tilt>
                 </div>
             ))}
         </div>

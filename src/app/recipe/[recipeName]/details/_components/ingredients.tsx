@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Label } from '@/components/ui/label';
+import { Playfair_Display } from 'next/font/google';
+
+const PlayfairDisplay = Playfair_Display({ subsets: ['latin'] });
 
 type IngredientsComponentProps = {
     index: number;
@@ -49,7 +52,8 @@ const IngredientsComponent: React.FC<IngredientsComponentProps> = ({
     return (
         <div className="flex justify-between border-b px-3 py-4">
             <div className="flex gap-x-2">
-                <p className="playfair-display-font w-[60px] text-4xl font-bold">
+                <p
+                    className={`${PlayfairDisplay.className} w-[60px] text-4xl font-bold`}>
                     {ingredientsLength >= 10
                         ? `${String(index + 1).padStart(2, '0')}`
                         : 'Ingredient'}

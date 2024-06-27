@@ -1,4 +1,7 @@
+import { Playfair_Display } from 'next/font/google';
 import { useEffect, useState } from 'react';
+
+const PlayfairDisplay = Playfair_Display({ subsets: ['latin'] });
 
 type InstructionsComponentProps = {
     index: number;
@@ -50,7 +53,8 @@ const InstructionsComponent: React.FC<InstructionsComponentProps> = ({
 
     return (
         <div className="grid border-b border-border px-3 py-4 md:grid-cols-[0.13fr_0.07fr_1fr] lg:grid-cols-[0.1fr_0.05fr_1fr]">
-            <p className="playfair-display-font text-4xl font-bold">
+            <p
+                className={`${PlayfairDisplay.className} w-[60px] text-4xl font-bold`}>
                 {ingredientsLength >= 10
                     ? `${String(index + 1).padStart(2, '0')}`
                     : 'Ingredient'}

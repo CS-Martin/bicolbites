@@ -16,6 +16,9 @@ import {
     AccordionTrigger
 } from '@/components/ui/accordion';
 import InstructionsComponent from './_components/instructions';
+import { Playfair_Display } from 'next/font/google';
+
+const PlayfairDisplay = Playfair_Display({ subsets: ['latin'] });
 
 const RecipeDetailsPage: React.FC = (): JSX.Element => {
     // Get http://localhost:3000/recipe/kinalas/details
@@ -55,7 +58,8 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
                 </section>
 
                 <section className="mt-10">
-                    <h1 className="playfair-display-font text-4xl font-bold">
+                    <h1
+                        className={`${PlayfairDisplay.className} text-4xl font-bold`}>
                         {recipes[0]?.name}
                     </h1>
                     <Separator className="my-5" />
