@@ -58,9 +58,9 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
                     <h1 className="text-4xl font-bold">{recipes[0]?.name}</h1>
                     <Separator className="my-5" />
                     <div>
-                        <label className="text-[14px] text-slate-600">
+                        <Label className="text-[14px] text-label">
                             Description:
-                        </label>
+                        </Label>
                         <p className="mt-1">{recipes[0]?.description}</p>
                     </div>
 
@@ -68,7 +68,7 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
                     <div className="my-7 rounded-lg border bg-card px-3">
                         <Accordion
                             type="single"
-                            defaultValue="instructions"
+                            defaultValue="ingredients"
                             collapsible>
                             <AccordionItem
                                 className="border-none"

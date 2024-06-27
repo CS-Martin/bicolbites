@@ -31,8 +31,10 @@ export default function Home() {
                 </Suspense>
             </section>
 
-            <section id="recipes" className="container mt-10 pb-20">
-                <div className="flex items-center justify-between">
+            <section className="container mt-10 pb-20">
+                <div
+                    id="recipes-anchor"
+                    className="flex items-center justify-between">
                     <Label className="flex gap-x-1 font-normal text-gray-400">
                         Results:
                         <Suspense fallback={<Label>Loading...</Label>}>

@@ -1,4 +1,5 @@
 import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
 import { useState } from 'react';
 
 type IngredientsComponentProps = {
@@ -40,7 +41,7 @@ const IngredientsComponent: React.FC<IngredientsComponentProps> = ({
                     onChange={handleCheckboxChange}
                 />
                 <p
-                    className={`relative ${isChecked ? 'text-slate-500' : ''} transition-all duration-500 ease-in-out`}>
+                    className={`relative ${isChecked ? 'text-gray-400' : ''} transition-all duration-500 ease-in-out`}>
                     {ingredientName.charAt(0).toUpperCase() +
                         ingredientName.slice(1)}
                     <span
@@ -51,7 +52,7 @@ const IngredientsComponent: React.FC<IngredientsComponentProps> = ({
                 </p>
             </div>
             <div>
-                <p className="text-slate-500">{quantity}</p>
+                <Label className="text-label">{quantity}</Label>
             </div>
         </div>
     );

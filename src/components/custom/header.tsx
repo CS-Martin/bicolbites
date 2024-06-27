@@ -48,13 +48,13 @@ const HeaderNavbar = () => {
                         {/* Navigation */}
                         <div className={`flex items-center gap-x-3 md:gap-x-8`}>
                             <a
-                                href="#"
+                                href="/"
                                 className={`hidden text-white md:block`}>
                                 {' '}
                                 Home
                             </a>
                             <a
-                                href="recipe"
+                                href="#recipes-anchor"
                                 className={`hidden text-white md:block`}>
                                 {' '}
                                 Recipes
