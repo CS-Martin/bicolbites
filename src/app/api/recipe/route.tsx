@@ -1,5 +1,4 @@
 import { RECIPE_JSON_FILE_PATH } from '@/lib/constants';
-import { Recipe } from '@/types/recipe.types';
 import { promises as fs } from 'fs';
 import { NextResponse } from 'next/server';
 

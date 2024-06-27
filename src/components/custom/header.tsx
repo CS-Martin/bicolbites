@@ -8,7 +8,6 @@ import Link from 'next/link';
 
 const HeaderNavbar = () => {
     const pathname = usePathname();
-    console.log(pathname);
     const { theme } = useTheme();
 
     // Triggers fireflies animation
