@@ -12,4 +12,3 @@ export type RecipeImage = Pick<Recipe, 'image'> & {
 };
 
 export type RecipeCard = Pick<Recipe, 'name' | 'description' | 'image'>;
-export type IngredientsComponent = Pick<Recipe, 'ingredients'>;

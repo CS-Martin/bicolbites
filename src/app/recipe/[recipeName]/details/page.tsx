@@ -60,7 +60,7 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
 
                     <div className="mt-10">
                         <h1>Ingredients</h1>
-                        <div className="grid grid-cols-2 items-center gap-2">
+                        <div className="gap-2">
                             {recipes[0]?.ingredients.map(
                                 (ingredient, index) => (
                                     <IngredientsComponent
