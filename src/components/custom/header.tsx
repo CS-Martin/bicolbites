@@ -3,10 +3,11 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { ModeToggle } from './theme-toggler';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 const HeaderNavbar = () => {
+    const router = useRouter();
     const pathname = usePathname();
     const { theme } = useTheme();
 
@@ -40,7 +41,9 @@ const HeaderNavbar = () => {
                 <nav
                     className={`fixed left-0 top-0 z-50 flex h-[150px] w-full items-center transition-all duration-500 ease-in-out ${isFixed ? 'h-[80px] bg-black bg-opacity-90 shadow-lg' : 'bg-transparent'}`}>
                     <div className="container flex h-16 items-center justify-between md:h-20">
-                        <div className="text-white">Logo</div>
+                        <Link href="/" className="text-white">
+                            Logo
+                        </Link>
 
                         {/* Navigation */}
                         <div className={`flex items-center gap-x-3 md:gap-x-8`}>
@@ -51,7 +54,7 @@ const HeaderNavbar = () => {
                                 Home
                             </a>
                             <a
-                                href="#"
+                                href="recipe"
                                 className={`hidden text-white md:block`}>
                                 {' '}
                                 Recipes
@@ -70,18 +73,13 @@ const HeaderNavbar = () => {
 
                         {/* Navigation */}
                         <div className={`flex items-center gap-x-3 md:gap-x-8`}>
-                            <a
-                                href="#"
+                            <Link
+                                href="/"
                                 className={`hidden text-white md:block`}>
                                 {' '}
                                 Home
-                            </a>
-                            <a
-                                href="#"
-                                className={`hidden text-white md:block`}>
-                                {' '}
-                                Recipes
-                            </a>
+                            </Link>
+
                             <ModeToggle />
                         </div>
                     </div>

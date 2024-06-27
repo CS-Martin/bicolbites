@@ -65,7 +65,7 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
                     </div>
 
                     {/* Accordion */}
-                    <div className="mt-7 rounded-lg border bg-card px-3">
+                    <div className="my-7 rounded-lg border bg-card px-3">
                         <Accordion
                             type="single"
                             defaultValue="instructions"

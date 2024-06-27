@@ -15,7 +15,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
 }): JSX.Element => {
     return (
         <div className="relative h-[350px] max-w-full overflow-hidden rounded-sm">
-            <Link href={`/recipe/${name.toLowerCase()}/details`}>
+            <Link href={`/recipe/${name.toLowerCase()}/details`} scroll={true}>
                 <div className="group relative overflow-hidden">
                     <RecipeImage
                         image={image}
