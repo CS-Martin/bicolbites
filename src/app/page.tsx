@@ -12,14 +12,8 @@ import { RecipeCardSkeleton } from './_components/skeletons';
 import { Suspense } from 'react';
 
 export default function Home() {
-    const searchParams = useSearchParams();
-    const search = searchParams.get('search')?.toString() ?? '';
-
-    const { recipes, loading } = useDisplayRecipes(search);
-
     return (
         <main>
-            {/* <ModeToggle /> */}
             <section className="relative flex h-[450px] animate-fade items-center justify-center">
                 <h1 className="absolute z-10 text-[46px] font-bold">
                     NagaBites
@@ -32,34 +26,66 @@ export default function Home() {
             </section>
 
             <section className="animate-fade border-b border-t shadow-xl">
-                <HomeSearch />
+                <Suspense fallback={<div>Loading search...</div>}>
+                    <HomeSearch />
+                </Suspense>
             </section>
+
             <section className="container mt-10 pb-20">
                 <div className="flex items-center justify-between">
                     <Label className="flex gap-x-1 font-normal text-gray-400">
                         Results:
-                        {search ? <Label>{search}</Label> : <Label>All</Label>}
+                        <Suspense fallback={<Label>Loading...</Label>}>
+                            <ResultsLabel />
+                        </Suspense>
                     </Label>
                     <SortRecipesButton />
                 </div>
                 <Separator className="my-3" />
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                    {loading ? (
-                        <RecipeCardSkeleton />
-                    ) : (
-                        recipes.map((recipe: Recipe) => (
-                            <Suspense fallback={<RecipeCardSkeleton />}>
-                                <RecipeCard
-                                    key={recipe.name}
-                                    name={recipe.name}
-                                    description={recipe.description}
-                                    image={recipe.image}
-                                />
-                            </Suspense>
-                        ))
-                    )}
-                </div>
+                <Suspense fallback={<RecipeCardSkeletonGrid />}>
+                    <RecipeGrid />
+                </Suspense>
             </section>
         </main>
+    );
+}
+
+function ResultsLabel() {
+    const searchParams = useSearchParams();
+    const search = searchParams.get('search')?.toString() ?? '';
+    return search ? <Label>{search}</Label> : <Label>All</Label>;
+}
+
+function RecipeGrid() {
+    const searchParams = useSearchParams();
+    const search = searchParams.get('search')?.toString() ?? '';
+
+    const { recipes, loading } = useDisplayRecipes(search);
+
+    if (loading) {
+        return <RecipeCardSkeletonGrid />;
+    }
+
+    return (
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {recipes.map((recipe: Recipe) => (
+                <RecipeCard
+                    key={recipe.name}
+                    name={recipe.name}
+                    description={recipe.description}
+                    image={recipe.image}
+                />
+            ))}
+        </div>
+    );
+}
+
+function RecipeCardSkeletonGrid() {
+    return (
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {Array.from({ length: 10 }).map((_, index) => (
+                <RecipeCardSkeleton key={index} />
+            ))}
+        </div>
     );
 }
