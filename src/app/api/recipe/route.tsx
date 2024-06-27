@@ -3,16 +3,16 @@ import { promises as fs } from 'fs';
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-   try {
-      const response = await fs.readFile(RECIPE_JSON_FILE_PATH, 'utf8');
-      const recipes = JSON.parse(response);
+    try {
+        const response = await fs.readFile(RECIPE_JSON_FILE_PATH, 'utf8');
+        const recipes = JSON.parse(response);
 
-      return NextResponse.json(recipes);
-   } catch (error) {
-      console.error('Error fetching recipes:', error);
-      return NextResponse.json(
-         { error: 'An error occurred while fetching recipes.' },
-         { status: 500 }
-      );
-   }
+        return NextResponse.json(recipes);
+    } catch (error) {
+        console.error('Error fetching recipes:', error);
+        return NextResponse.json(
+            { error: 'An error occurred while fetching recipes.' },
+            { status: 500 }
+        );
+    }
 }
