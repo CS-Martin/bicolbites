@@ -4,29 +4,29 @@ import { fetchAllRecipes } from '@/services/recipes-api';
 import { filterSearchedRecipes } from '@/lib/utils';
 
 export const useDisplayRecipes = (
-    searchParams: string
+   searchParams: string
 ): { recipes: Recipe[]; loading: boolean } => {
-    const [recipes, setRecipes] = useState<Recipe[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
+   const [recipes, setRecipes] = useState<Recipe[]>([]);
+   const [loading, setLoading] = useState<boolean>(true);
 
-    useEffect(() => {
-        const fetchRecipes = async () => {
-            const recipes = await fetchAllRecipes();
+   useEffect(() => {
+      const fetchRecipes = async () => {
+         const recipes = await fetchAllRecipes();
 
-            if (searchParams) {
-                const filteredRecipes = filterSearchedRecipes(
-                    searchParams,
-                    recipes
-                );
-                return setRecipes(filteredRecipes);
-            }
+         if (searchParams) {
+            const filteredRecipes = filterSearchedRecipes(
+               searchParams,
+               recipes
+            );
+            return setRecipes(filteredRecipes);
+         }
 
-            setRecipes(recipes);
-        };
+         setRecipes(recipes);
+      };
 
-        fetchRecipes();
-        setLoading(false);
-    }, [searchParams]);
+      fetchRecipes();
+      setLoading(false);
+   }, [searchParams]);
 
-    return { recipes, loading };
+   return { recipes, loading };
 };
