@@ -3,6 +3,12 @@ import { Recipe } from '@/types/recipe.types';
 import { fetchAllRecipes } from '@/services/recipes-api';
 import { filterSearchedRecipes } from '@/lib/utils';
 
+/**
+ * Custom hook to display recipes based on search parameters.
+ *
+ * @param {string} searchParams - The search parameters to filter the recipes.
+ * @return {{ recipes: Recipe[]; loading: boolean }} The recipes and loading state.
+ */
 export const useDisplayRecipes = (
     searchParams: string
 ): { recipes: Recipe[]; loading: boolean } => {

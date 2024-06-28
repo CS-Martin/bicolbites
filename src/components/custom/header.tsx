@@ -6,6 +6,7 @@ import { ModeToggle } from './theme-toggler';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Playfair_Display, Sacramento } from 'next/font/google';
+import HeaderSearch from './header-search';
 
 const PlayfairDisplay = Playfair_Display({ subsets: ['latin'] });
 const SacramentoRegular = Sacramento({ weight: '400', subsets: ['latin'] });
@@ -91,7 +92,7 @@ const HeaderNavbar = () => {
                                 {' '}
                                 Home
                             </Link>
-
+                            <HeaderSearch />
                             <ModeToggle />
                         </div>
                     </div>

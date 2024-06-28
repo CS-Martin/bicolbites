@@ -1,6 +1,12 @@
 import { Recipe } from '@/types/recipe.types';
 
 let environment = process.env.NODE_ENV;
+
+/**
+ * Fetches all recipes from the API.
+ *
+ * @return {Promise<Recipe[]>} A promise that resolves to an array of Recipe objects.
+ */
 export const fetchAllRecipes = async (): Promise<Recipe[]> => {
     /**
      * TODO: Stop fetching recipes from local storage.

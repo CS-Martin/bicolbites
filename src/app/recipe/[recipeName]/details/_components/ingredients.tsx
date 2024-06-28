@@ -10,6 +10,14 @@ type IngredientsComponentProps = {
     ingredients: string;
 };
 
+/**
+ * A function that renders ingredients inside the accordion
+ *
+ * @param {number} index - The index of the ingredient.
+ * @param {string} recipeName - The name of the recipe.
+ * @param {string} ingredients - The ingredients for the recipe.
+ * @return {JSX.Element} The rendered ingredient component.
+ */
 const IngredientsComponent: React.FC<IngredientsComponentProps> = ({
     index,
     recipeName,

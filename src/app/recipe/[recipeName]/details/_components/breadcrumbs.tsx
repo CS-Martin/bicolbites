@@ -1,4 +1,3 @@
-import { Recipe } from '../../../../../types/recipe.types';
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -11,6 +10,14 @@ import {
 type RecipePageBreadcrumbsProps = {
     pageName: string;
 };
+
+/**
+ * Renders the breadcrumb component for the recipe page.
+ *
+ * @param {RecipePageBreadcrumbsProps} props - The component props.
+ * @param {string} props.pageName - The name of the recipe page.
+ * @return {JSX.Element} The breadcrumb component.
+ */
 const RecipePageBreadcrumbs: React.FC<RecipePageBreadcrumbsProps> = ({
     pageName
 }): JSX.Element => {

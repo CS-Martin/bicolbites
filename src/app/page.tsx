@@ -79,9 +79,9 @@ function RecipeGrid() {
     }
 
     return (
-        <div className="masonry-grid">
+        <div className="columns-2 gap-3 md:columns-3 lg:columns-4">
             {recipes.map((recipe: Recipe) => (
-                <div className="masonry-item" key={recipe.name}>
+                <div className="mb-5 inline-block w-full" key={recipe.name}>
                     <Tilt
                         glareEnable={true}
                         glareMaxOpacity={0.1}

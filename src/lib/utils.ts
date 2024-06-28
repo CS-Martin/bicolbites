@@ -6,6 +6,13 @@ export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 
+/**
+ * Filters an array of recipes based on the search parameters.
+ *
+ * @param {string} searchParams - The search parameters to filter the recipes.
+ * @param {Recipe[]} recipes - The array of recipes to filter.
+ * @return {Recipe[]} The filtered array of recipes.
+ */
 export const filterSearchedRecipes = (
     searchParams: string,
     recipes: Recipe[]
