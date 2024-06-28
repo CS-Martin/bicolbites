@@ -71,12 +71,14 @@ const IngredientsComponent: React.FC<IngredientsComponentProps> = ({
                         ? `${String(index + 1).padStart(2, '0')}`
                         : 'Ingredient'}
                 </p>
-                <input
-                    type="checkbox"
-                    className="h-5 w-5"
-                    checked={isChecked}
-                    onChange={handleCheckboxChange}
-                />
+                <div className="w-[60px">
+                    <input
+                        type="checkbox"
+                        className="h-5 w-5"
+                        checked={isChecked}
+                        onChange={handleCheckboxChange}
+                    />
+                </div>
                 <p
                     className={`relative ${isChecked ? 'text-gray-400' : ''} transition-all duration-500 ease-in-out`}>
                     {ingredientName.charAt(0).toUpperCase() +

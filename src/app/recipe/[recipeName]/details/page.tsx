@@ -35,7 +35,7 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
     const { recipes, loading } = useDisplayRecipes(decodedRecipeName);
 
     return (
-        <main className="container mt-[100px] md:px-28">
+        <main className="container mt-[100px] h-[100%] animate-fade md:px-10 lg:px-14 xl:px-28">
             <div className="relative grid h-[100vh] lg:grid-cols-[1fr_2fr]">
                 <section className="">
                     <div className="lg:fixed">
@@ -51,7 +51,7 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
                             <RecipeImage
                                 image={recipes[0]?.image}
                                 alt={recipes[0]?.name}
-                                className={`mt-5 w-full rounded-md object-cover shadow-md contrast-[1.15] transition-transform duration-300 ease-in-out lg:h-[530px] lg:w-[350px]`}
+                                className={`mt-5 w-full rounded-md object-cover shadow-md contrast-[1.15] transition-transform duration-300 ease-in-out sm:h-[500px] md:h-[400px] lg:h-[530px] lg:w-[350px]`}
                             />
                         </Tilt>
                     </div>
