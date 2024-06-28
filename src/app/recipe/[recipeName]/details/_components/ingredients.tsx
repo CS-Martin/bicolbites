@@ -31,17 +31,22 @@ const IngredientsComponent: React.FC<IngredientsComponentProps> = ({
     const [isChecked, setIsChecked] = useState(() => {
         // Load the initial state from localStorage if available
         const savedState = localStorage.getItem(
-            `${'ig-' + recipeName}-${index}`
+            `${'[ingredient]' + recipeName}-${index}`
         );
         return savedState ? JSON.parse(savedState) : false;
     });
 
     useEffect(() => {
-        // Save the state to localStorage whenever it changes
-        localStorage.setItem(
-            `${'ig-' + recipeName}-${index}`,
-            JSON.stringify(isChecked)
-        );
+        // Only save in the localstorage if checked
+        // Otherwise, remove from the localstorage
+        if (isChecked) {
+            localStorage.setItem(
+                `${'[ingredient]' + recipeName}-${index}`,
+                JSON.stringify(isChecked)
+            );
+        } else {
+            localStorage.removeItem(`[ingredient]${recipeName}-${index}`);
+        }
     }, [isChecked, index]);
 
     const handleCheckboxChange = () => {

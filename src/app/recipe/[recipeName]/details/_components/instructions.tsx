@@ -32,17 +32,22 @@ const InstructionsComponent: React.FC<InstructionsComponentProps> = ({
     const [isChecked, setIsChecked] = useState(() => {
         // Load the initial state from localStorage if available
         const savedState = localStorage.getItem(
-            `${'in-' + recipeName}-${index}`
+            `${'[instruction]' + recipeName}-${index}`
         );
         return savedState ? JSON.parse(savedState) : false;
     });
 
     useEffect(() => {
-        // Save the state to localStorage whenever it changes
-        localStorage.setItem(
-            `${'in-' + recipeName}-${index}`,
-            JSON.stringify(isChecked)
-        );
+        // Only save in the localstorage if checked
+        // Otherwise, remove from the localstorage
+        if (isChecked) {
+            localStorage.setItem(
+                `${'[instruction]' + recipeName}-${index}`,
+                JSON.stringify(isChecked)
+            );
+        } else {
+            localStorage.removeItem(`[instruction]${recipeName}-${index}`);
+        }
     }, [isChecked, index]);
 
     const handleCheckboxChange = () => {
