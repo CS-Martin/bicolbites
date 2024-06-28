@@ -60,7 +60,8 @@ const InstructionsComponent: React.FC<InstructionsComponentProps> = ({
         <div className="border-b border-border px-3 py-4">
             <div className="flex flex-row">
                 <p
-                    className={`${PlayfairDisplay.className} w-[60px] text-4xl font-bold`}>
+                    className={`${PlayfairDisplay.className} w-[60px] text-4xl font-bold`}
+                >
                     {ingredientsLength >= 10
                         ? `${String(index + 1).padStart(2, '0')}`
                         : 'Ingredient'}
@@ -75,14 +76,16 @@ const InstructionsComponent: React.FC<InstructionsComponentProps> = ({
                 </div>
                 <div className="w-full">
                     <p
-                        className={`relative ${isChecked ? 'text-gray-400' : ''} transition-all duration-500 ease-in-out`}>
+                        className={`relative ${isChecked ? 'text-gray-400' : ''} transition-all duration-500 ease-in-out`}
+                    >
                         {instructions.charAt(0).toUpperCase() +
                             instructions.slice(1)}
                         <span
                             className={`absolute left-0 top-1/4 h-[1px] w-full transform bg-current transition-transform duration-500 ease-in-out ${
                                 isChecked ? 'scale-x-100' : 'scale-x-0'
                             }`}
-                            style={{ transformOrigin: 'left' }}></span>
+                            style={{ transformOrigin: 'left' }}
+                        ></span>
                     </p>
                 </div>
             </div>

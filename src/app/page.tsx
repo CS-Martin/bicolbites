@@ -21,7 +21,8 @@ export default function Home() {
         <main>
             <section className="relative flex h-[450px] animate-fade items-center justify-center">
                 <h1
-                    className={`${PlayfairDisplay.className} absolute z-10 animate-fade text-8xl font-bold text-white`}>
+                    className={`${PlayfairDisplay.className} absolute z-10 animate-fade text-8xl font-bold text-white`}
+                >
                     Bicol{' '}
                     <span className={`${SacramentoRegular.className}`}>
                         Bites
@@ -44,7 +45,8 @@ export default function Home() {
             <section className="container mt-10 pb-20">
                 <div
                     id="recipes-anchor"
-                    className="mb-3 flex items-center justify-between">
+                    className="mb-3 flex items-center justify-between"
+                >
                     <Label className="flex gap-x-1 font-normal text-label">
                         Results:
                         <Suspense fallback={<Label>Loading...</Label>}>
@@ -89,7 +91,8 @@ function RecipeGrid() {
                         glarePosition="all"
                         glareBorderRadius="10px"
                         transitionSpeed={10000}
-                        scale={1.01}>
+                        scale={1.01}
+                    >
                         <RecipeCard
                             name={recipe.name}
                             description={recipe.description}

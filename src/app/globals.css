@@ -36,6 +36,7 @@
 
         /* Custom */
         --label: 0 0% 50%;
+        --hover: 0 0% 90%;
     }
 
     .dark {
@@ -69,6 +70,7 @@
 
         /* Custom */
         --label: 0 0% 50%;
+        --hover: 0 0% 10%;
     }
 }
 
@@ -84,4 +86,26 @@
 .masonry-item {
     display: inline-block;
     width: 100%;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #a3a3a3 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 0px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #a3a3a3;
+    border-radius: 1000px;
+    border: 47px solid #ffffff;
 }

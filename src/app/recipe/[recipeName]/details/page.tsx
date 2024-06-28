@@ -47,7 +47,8 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
                             glarePosition="all"
                             glareBorderRadius="10px"
                             transitionSpeed={7000}
-                            scale={1.02}>
+                            scale={1.02}
+                        >
                             <RecipeImage
                                 image={recipes[0]?.image}
                                 alt={recipes[0]?.name}
@@ -59,7 +60,8 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
 
                 <section className="mt-10">
                     <h1
-                        className={`${PlayfairDisplay.className} text-4xl font-bold`}>
+                        className={`${PlayfairDisplay.className} text-4xl font-bold`}
+                    >
                         {recipes[0]?.name}
                     </h1>
                     <Separator className="my-5" />
@@ -75,10 +77,12 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
                         <Accordion
                             type="single"
                             defaultValue="ingredients"
-                            collapsible>
+                            collapsible
+                        >
                             <AccordionItem
                                 className="border-none"
-                                value="ingredients">
+                                value="ingredients"
+                            >
                                 <AccordionTrigger>Ingredients</AccordionTrigger>
                                 <AccordionContent>
                                     {recipes[0]?.ingredients.map(
@@ -95,7 +99,8 @@ const RecipeDetailsPage: React.FC = (): JSX.Element => {
                             </AccordionItem>
                             <AccordionItem
                                 className="border-none"
-                                value="instructions">
+                                value="instructions"
+                            >
                                 <AccordionTrigger>
                                     Instructions
                                 </AccordionTrigger>

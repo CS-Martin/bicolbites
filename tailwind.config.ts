@@ -54,6 +54,9 @@ const config = {
                 },
                 label: {
                     DEFAULT: 'hsl(var(--label))'
+                },
+                hover: {
+                    DEFAULT: 'hsl(var(--hover))'
                 }
             },
             borderRadius: {
