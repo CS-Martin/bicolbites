@@ -17,7 +17,7 @@ export const fetchAllRecipes = async (): Promise<Recipe[]> => {
     try {
         const response: Response = await fetch(
             environment === 'production'
-                ? 'https://nagabites.vercel.app/api/recipe'
+                ? 'https://bicolbites.vercel.app/api/recipe'
                 : 'http://localhost:3000/api/recipe'
         );
         const recipes: Recipe[] = await response.json();
