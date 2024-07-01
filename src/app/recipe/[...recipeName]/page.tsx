@@ -2,8 +2,8 @@
 
 import RecipeImage from '@/components/custom/recipe-image';
 import { useDisplayRecipeDetails } from '@/hooks/useRecipes';
-import { notFound, useParams, usePathname } from 'next/navigation';
-import React from 'react';
+import { notFound } from 'next/navigation';
+import React, { Suspense } from 'react';
 import Tilt from 'react-parallax-tilt';
 import RecipePageBreadcrumbs from './_components/breadcrumbs';
 import { Label } from '@/components/ui/label';
@@ -17,6 +17,11 @@ import {
 } from '@/components/ui/accordion';
 import InstructionsComponent from './_components/instructions';
 import { Playfair_Display } from 'next/font/google';
+import {
+    RecipeBreadCrumbSkeleton,
+    RecipeDetailsSkeleton,
+    RecipeImageSkeleton
+} from './_components/skeletons';
 
 const PlayfairDisplay = Playfair_Display({ subsets: ['latin'] });
 
@@ -45,6 +50,10 @@ const RecipeDetailsPage: React.FC<RecipeDetailsPageProps> = ({
     const { recipe, loading } = useDisplayRecipeDetails(recipeName);
     console.log(recipe?.name);
 
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
     if (recipe === null) {
         return notFound();
     }
@@ -54,7 +63,9 @@ const RecipeDetailsPage: React.FC<RecipeDetailsPageProps> = ({
             <div className="relative grid h-[100vh] lg:grid-cols-[1fr_2fr]">
                 <section className="">
                     <div className="lg:fixed">
-                        <RecipePageBreadcrumbs pageName={recipe?.name} />
+                        <Suspense fallback={<RecipeBreadCrumbSkeleton />}>
+                            <RecipePageBreadcrumbs pageName={recipe?.name} />
+                        </Suspense>
                         <Tilt
                             glareEnable={true}
                             glareMaxOpacity={0.1}
@@ -64,76 +75,82 @@ const RecipeDetailsPage: React.FC<RecipeDetailsPageProps> = ({
                             transitionSpeed={7000}
                             scale={1.02}
                         >
-                            <RecipeImage
-                                image={recipe?.image}
-                                alt={recipe?.name}
-                                className={`mt-5 w-full rounded-md object-cover shadow-md contrast-[1.15] transition-transform duration-300 ease-in-out sm:h-[500px] md:h-[400px] lg:h-[530px] lg:w-[350px]`}
-                            />
+                            <Suspense fallback={<RecipeImageSkeleton />}>
+                                <RecipeImage
+                                    image={recipe?.image}
+                                    alt={recipe?.name}
+                                    className={`mt-5 w-full rounded-md object-cover shadow-md contrast-[1.15] transition-transform duration-300 ease-in-out sm:h-[500px] md:h-[400px] lg:h-[530px] lg:w-[350px]`}
+                                />
+                            </Suspense>
                         </Tilt>
                     </div>
                 </section>
 
-                <section className="mt-10">
-                    <h1
-                        className={`${PlayfairDisplay.className} text-4xl font-bold`}
-                    >
-                        {recipe?.name}
-                    </h1>
-                    <Separator className="my-5" />
-                    <div>
-                        <Label className="text-[14px] text-label">
-                            Description:
-                        </Label>
-                        <p className="mt-1">{recipe?.description}</p>
-                    </div>
-
-                    <div className="my-7 rounded-lg border bg-card px-3">
-                        <Accordion
-                            type="single"
-                            defaultValue="ingredients"
-                            collapsible
+                <Suspense fallback={<RecipeDetailsSkeleton />}>
+                    <section className="mt-10">
+                        <h1
+                            className={`${PlayfairDisplay.className} text-4xl font-bold`}
                         >
-                            <AccordionItem
-                                className="border-none"
-                                value="ingredients"
+                            {recipe?.name}
+                        </h1>
+                        <Separator className="my-5" />
+                        <div>
+                            <Label className="text-[14px] text-label">
+                                Description:
+                            </Label>
+                            <p className="mt-1">{recipe?.description}</p>
+                        </div>
+
+                        <div className="my-7 rounded-lg border bg-card px-3">
+                            <Accordion
+                                type="single"
+                                defaultValue="ingredients"
+                                collapsible
                             >
-                                <AccordionTrigger>Ingredients</AccordionTrigger>
-                                <AccordionContent>
-                                    {recipe?.ingredients.map(
-                                        (ingredient, index) => (
-                                            <IngredientsComponent
-                                                key={index}
-                                                index={index}
-                                                recipeName={recipe?.name}
-                                                ingredients={ingredient}
-                                            />
-                                        )
-                                    )}
-                                </AccordionContent>
-                            </AccordionItem>
-                            <AccordionItem
-                                className="border-none"
-                                value="instructions"
-                            >
-                                <AccordionTrigger>
-                                    Instructions
-                                </AccordionTrigger>
-                                <AccordionContent>
-                                    {recipe?.instructions.map(
-                                        (instruction, index) => (
-                                            <InstructionsComponent
-                                                key={index}
-                                                index={index}
-                                                recipeName={recipe?.name}
-                                                instructions={instruction}
-                                            />
-                                        )
-                                    )}
-                                </AccordionContent>
-                            </AccordionItem>
-                        </Accordion>
-                    </div>
-                </section>
+                                <AccordionItem
+                                    className="border-none"
+                                    value="ingredients"
+                                >
+                                    <AccordionTrigger>
+                                        Ingredients
+                                    </AccordionTrigger>
+                                    <AccordionContent>
+                                        {recipe?.ingredients.map(
+                                            (ingredient, index) => (
+                                                <IngredientsComponent
+                                                    key={index}
+                                                    index={index}
+                                                    recipeName={recipe?.name}
+                                                    ingredients={ingredient}
+                                                />
+                                            )
+                                        )}
+                                    </AccordionContent>
+                                </AccordionItem>
+                                <AccordionItem
+                                    className="border-none"
+                                    value="instructions"
+                                >
+                                    <AccordionTrigger>
+                                        Instructions
+                                    </AccordionTrigger>
+                                    <AccordionContent>
+                                        {recipe?.instructions.map(
+                                            (instruction, index) => (
+                                                <InstructionsComponent
+                                                    key={index}
+                                                    index={index}
+                                                    recipeName={recipe?.name}
+                                                    instructions={instruction}
+                                                />
+                                            )
+                                        )}
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
+                        </div>
+                    </section>
+                </Suspense>
             </div>
         </main>
     );

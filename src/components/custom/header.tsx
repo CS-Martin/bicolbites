@@ -29,7 +29,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ isHome, isFixed }) => (
     <nav
-        className={`${PlayfairDisplay.className} fixed left-0 top-0 z-50 flex w-full items-center transition-all duration-500 ease-in-out ${
+        className={`${PlayfairDisplay.className} fixed left-0 top-0 z-30 flex w-full items-center transition-all duration-500 ease-in-out ${
             isHome
                 ? `${isFixed ? 'h-[80px] bg-black bg-opacity-80 shadow-lg' : 'h-[150px] bg-transparent'}`
                 : 'h-[80px] bg-black'
