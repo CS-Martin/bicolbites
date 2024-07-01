@@ -14,7 +14,14 @@ export async function GET(request: Request, context: any) {
                 recipe.name.toLowerCase() === params.name.toLowerCase()
         );
 
-        return NextResponse.json(recipe);
+        if (recipe.length === 0) {
+            return NextResponse.json(
+                { error: 'Recipe not found.' },
+                { status: 500 }
+            );
+        }
+
+        return NextResponse.json(recipe[0]);
     } catch (error) {
         console.error('Error fetching recipes:', error);
         return NextResponse.json(

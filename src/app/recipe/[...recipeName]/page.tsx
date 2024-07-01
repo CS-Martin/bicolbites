@@ -1,8 +1,8 @@
 'use client';
 
 import RecipeImage from '@/components/custom/recipe-image';
-import { useDisplayRecipes } from '@/hooks/useRecipes';
-import { useParams, usePathname } from 'next/navigation';
+import { useDisplayRecipeDetails } from '@/hooks/useRecipes';
+import { notFound, useParams, usePathname } from 'next/navigation';
 import React from 'react';
 import Tilt from 'react-parallax-tilt';
 import RecipePageBreadcrumbs from './_components/breadcrumbs';
@@ -30,27 +30,31 @@ const RecipeDetailsPage: React.FC<RecipeDetailsPageProps> = ({
     params
 }): JSX.Element => {
     const recipeName = decodeURIComponent(params.recipeName[0]) as string;
-
     /**
      * Encountered a nextjs bug that scrolls to the top
      * on event change. This is a workaround
      * to avoid that bug.
      */
-    setTimeout(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }, 800);
+    // setTimeout(() => {
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: 'smooth'
+    //     });
+    // }, 800);
 
-    const { recipes, loading } = useDisplayRecipes(recipeName);
+    const { recipe, loading } = useDisplayRecipeDetails(recipeName);
+    console.log(recipe?.name);
+
+    if (recipe === null) {
+        return notFound();
+    }
 
     return (
         <main className="container mt-[100px] h-[100%] animate-fade md:px-10 lg:px-14 xl:px-28">
             <div className="relative grid h-[100vh] lg:grid-cols-[1fr_2fr]">
                 <section className="">
                     <div className="lg:fixed">
-                        <RecipePageBreadcrumbs pageName={recipes[0]?.name} />
+                        <RecipePageBreadcrumbs pageName={recipe?.name} />
                         <Tilt
                             glareEnable={true}
                             glareMaxOpacity={0.1}
@@ -61,8 +65,8 @@ const RecipeDetailsPage: React.FC<RecipeDetailsPageProps> = ({
                             scale={1.02}
                         >
                             <RecipeImage
-                                image={recipes[0]?.image}
-                                alt={recipes[0]?.name}
+                                image={recipe?.image}
+                                alt={recipe?.name}
                                 className={`mt-5 w-full rounded-md object-cover shadow-md contrast-[1.15] transition-transform duration-300 ease-in-out sm:h-[500px] md:h-[400px] lg:h-[530px] lg:w-[350px]`}
                             />
                         </Tilt>
@@ -73,17 +77,16 @@ const RecipeDetailsPage: React.FC<RecipeDetailsPageProps> = ({
                     <h1
                         className={`${PlayfairDisplay.className} text-4xl font-bold`}
                     >
-                        {recipes[0]?.name}
+                        {recipe?.name}
                     </h1>
                     <Separator className="my-5" />
                     <div>
                         <Label className="text-[14px] text-label">
                             Description:
                         </Label>
-                        <p className="mt-1">{recipes[0]?.description}</p>
+                        <p className="mt-1">{recipe?.description}</p>
                     </div>
 
-                    {/* Accordion */}
                     <div className="my-7 rounded-lg border bg-card px-3">
                         <Accordion
                             type="single"
@@ -96,12 +99,12 @@ const RecipeDetailsPage: React.FC<RecipeDetailsPageProps> = ({
                             >
                                 <AccordionTrigger>Ingredients</AccordionTrigger>
                                 <AccordionContent>
-                                    {recipes[0]?.ingredients.map(
+                                    {recipe?.ingredients.map(
                                         (ingredient, index) => (
                                             <IngredientsComponent
                                                 key={index}
                                                 index={index}
-                                                recipeName={recipes[0]?.name}
+                                                recipeName={recipe?.name}
                                                 ingredients={ingredient}
                                             />
                                         )
@@ -116,12 +119,12 @@ const RecipeDetailsPage: React.FC<RecipeDetailsPageProps> = ({
                                     Instructions
                                 </AccordionTrigger>
                                 <AccordionContent>
-                                    {recipes[0]?.instructions.map(
+                                    {recipe?.instructions.map(
                                         (instruction, index) => (
                                             <InstructionsComponent
                                                 key={index}
                                                 index={index}
-                                                recipeName={recipes[0]?.name}
+                                                recipeName={recipe?.name}
                                                 instructions={instruction}
                                             />
                                         )

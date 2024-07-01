@@ -1,5 +1,6 @@
 import { DEVELOPMENT_API_URL, PRODUCTION_API_URL } from '@/lib/constants';
 import { Recipe } from '@/types/recipe.types';
+import { notFound } from 'next/navigation';
 
 let environment = process.env.NODE_ENV;
 
@@ -8,7 +9,7 @@ let environment = process.env.NODE_ENV;
  *
  * @return {Promise<Recipe[]>} A promise that resolves to an array of Recipe objects.
  */
-export const fetchAllRecipes = async (): Promise<Recipe[]> => {
+export const fetchAllRecipes = async (): Promise<Recipe[] | null> => {
     /**
      * TODO: Stop fetching recipes from local storage.
      * Because Nextjs automatically caches the data.
@@ -21,11 +22,39 @@ export const fetchAllRecipes = async (): Promise<Recipe[]> => {
                 ? PRODUCTION_API_URL
                 : DEVELOPMENT_API_URL
         );
+
+        if (response.status !== 200) {
+            console.log(':return');
+            return null;
+        }
+
         const recipes: Recipe[] = await response.json();
 
         return recipes;
     } catch (error) {
         console.error('Error fetching recipes:', error);
-        return [];
+        return null;
+    }
+};
+
+export const fetchSpecificRecipe = async (
+    recipeName: string
+): Promise<Recipe | null> => {
+    try {
+        const response: Response = await fetch(
+            environment === 'production'
+                ? `${PRODUCTION_API_URL}/${recipeName}/details`
+                : `${DEVELOPMENT_API_URL}/${recipeName}/details`
+        );
+
+        if (!response.ok) {
+            return null;
+        }
+
+        const recipe = await response.json();
+        return recipe;
+    } catch (error) {
+        console.error('Error fetching recipes:', error);
+        return null;
     }
 };
