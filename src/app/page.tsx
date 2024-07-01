@@ -12,11 +12,20 @@ import { RecipeCardSkeleton } from './_components/skeletons';
 import { Suspense } from 'react';
 import Tilt from 'react-parallax-tilt';
 import { Playfair_Display, Sacramento } from 'next/font/google';
+import Loader from './loading';
 
 const PlayfairDisplay = Playfair_Display({ subsets: ['latin'] });
 const SacramentoRegular = Sacramento({ weight: '400', subsets: ['latin'] });
 
 export default function Home() {
+    const searchParams = useSearchParams();
+    const search = searchParams.get('search')?.toString() ?? '';
+
+    const { recipes, loading } = useDisplayRecipes(search);
+
+    if (loading) {
+        return <Loader />;
+    }
     return (
         <main>
             <section className="relative flex h-[450px] animate-fade items-center justify-center">
@@ -56,8 +65,8 @@ export default function Home() {
                     <SortRecipesButton />
                 </div>
                 <Separator className="my-3" />
-                <Suspense fallback={<RecipeCardSkeletonGrid />}>
-                    <RecipeGrid />
+                <Suspense fallback={<RecipeCardSkeleton />}>
+                    <RecipeGrid recipes={recipes} />
                 </Suspense>
             </section>
         </main>
@@ -70,20 +79,11 @@ function ResultsLabel() {
     return search ? <Label>{search}</Label> : <Label>All</Label>;
 }
 
-function RecipeGrid() {
-    const searchParams = useSearchParams();
-    const search = searchParams.get('search')?.toString() ?? '';
-
-    const { recipes, loading } = useDisplayRecipes(search);
-
-    if (loading) {
-        return <RecipeCardSkeletonGrid />;
-    }
-
+function RecipeGrid({ recipes }: { recipes: Recipe[] }) {
     return (
         <div className="columns-2 gap-3 md:columns-3 lg:columns-4">
-            {recipes.map((recipe: Recipe) => (
-                <div className="mb-5 inline-block w-full" key={recipe.name}>
+            {recipes.map((recipe: Recipe, index: number) => (
+                <div className="mb-5 inline-block w-full" key={index}>
                     <Tilt
                         glareEnable={true}
                         glareMaxOpacity={0.1}
@@ -100,16 +100,6 @@ function RecipeGrid() {
                         />
                     </Tilt>
                 </div>
-            ))}
-        </div>
-    );
-}
-
-function RecipeCardSkeletonGrid() {
-    return (
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {Array.from({ length: 10 }).map((_, index) => (
-                <RecipeCardSkeleton key={index} />
             ))}
         </div>
     );

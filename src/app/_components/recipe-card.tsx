@@ -15,9 +15,10 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
     image,
     description
 }): JSX.Element => {
+    console.log('RecipeCardProps', name, image, description);
     return (
         <div className="relative overflow-hidden rounded-lg bg-white shadow">
-            <Link href={`/recipe/${name.toLowerCase()}/details`} scroll={true}>
+            <Link href={`/${name.toLowerCase()}/details`} scroll={true}>
                 <div className="group relative overflow-hidden">
                     <img
                         src={image}
