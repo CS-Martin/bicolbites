@@ -1,3 +1,4 @@
+import { DEVELOPMENT_API_URL, PRODUCTION_API_URL } from '@/lib/constants';
 import { Recipe } from '@/types/recipe.types';
 
 let environment = process.env.NODE_ENV;
@@ -17,8 +18,8 @@ export const fetchAllRecipes = async (): Promise<Recipe[]> => {
     try {
         const response: Response = await fetch(
             environment === 'production'
-                ? 'https://bicolbites.vercel.app/api/recipe'
-                : 'http://localhost:3000/api/recipe'
+                ? PRODUCTION_API_URL
+                : DEVELOPMENT_API_URL
         );
         const recipes: Recipe[] = await response.json();
 

@@ -1,33 +1,36 @@
 # **Bicolbites** https://bicolbites.vercel.app/
+
 > <sup>Short Description</sup>
 
 Bicolbites is a simple recipe catalogue web application ephasizing special dishes from the Bicol Region, Philippines.
+
 ## Home page
+
 ![Alt text](public/images/catalogue-page.png)
 
 ## Specific recipe page
+
 ![Alt text](public/images/recipe-page.png)
 
-
 ## **Conventions**
+
 1. **Github**
     - Commits:
-        ``` shell
+        ```shell
         git commit -m [action]: [description]
         ```
         - Action:
-            | Option | Information |
-            | :---: | :--- |
-            | `feat`        | New feature for the user, not a new feature for build script.         |
-            | `fix`         | Bug fix for the user, not a fix to a build script.                    |
-            | `docs`        | Changes to the documentation.                                         |
-            | `style`       | Formatting, missing semi colons, etc; no production code change       |
-            | `refactor`    | Refactoring production code, eg. renaming a variable                  |
-            | `test`        | Adding missing tests, refactoring tests; no production code change    |
-            | `chore`       | Updating grunt tasks etc; no production code change.                  |
-            
+          | Option | Information |
+          | :---: | :--- |
+          | `feat` | New feature for the user, not a new feature for build script. |
+          | `fix` | Bug fix for the user, not a fix to a build script. |
+          | `docs` | Changes to the documentation. |
+          | `style` | Formatting, missing semi colons, etc; no production code change |
+          | `refactor` | Refactoring production code, eg. renaming a variable |
+          | `test` | Adding missing tests, refactoring tests; no production code change |
+          | `chore` | Updating grunt tasks etc; no production code change. |
     - Branching:
-        ``` shell
+        ```shell
             git branch '[layer]/[description]' '[commit-hash]'
             --- or ---
             git checkout -b '[layer]/[description]' '[commit-hash]'
