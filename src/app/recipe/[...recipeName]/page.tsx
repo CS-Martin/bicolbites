@@ -2,7 +2,7 @@
 
 import RecipeImage from '@/components/custom/recipe-image';
 import { useDisplayRecipes } from '@/hooks/useRecipes';
-import { usePathname } from 'next/navigation';
+import { useParams, usePathname } from 'next/navigation';
 import React from 'react';
 import Tilt from 'react-parallax-tilt';
 import RecipePageBreadcrumbs from './_components/breadcrumbs';
@@ -20,19 +20,30 @@ import { Playfair_Display } from 'next/font/google';
 
 const PlayfairDisplay = Playfair_Display({ subsets: ['latin'] });
 
-const RecipeDetailsPage: React.FC = (): JSX.Element => {
-    // Get http://localhost:3000/recipe/kinalas/details
-    const pathname = usePathname();
-    const recipeName = pathname.split('/')[2];
-    const decodedRecipeName = decodeURIComponent(recipeName);
+interface RecipeDetailsPageProps {
+    params: {
+        recipeName: string;
+    };
+}
+
+const RecipeDetailsPage: React.FC<RecipeDetailsPageProps> = ({
+    params
+}): JSX.Element => {
+    const recipeName = decodeURIComponent(params.recipeName[0]) as string;
 
     /**
      * Encountered a nextjs bug that scrolls to the top
      * on event change. This is a workaround
      * to avoid that bug.
      */
-    scrollTo(0, 0);
-    const { recipes, loading } = useDisplayRecipes(decodedRecipeName);
+    setTimeout(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }, 800);
+
+    const { recipes, loading } = useDisplayRecipes(recipeName);
 
     return (
         <main className="container mt-[100px] h-[100%] animate-fade md:px-10 lg:px-14 xl:px-28">
