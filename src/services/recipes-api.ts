@@ -37,6 +37,12 @@ export const fetchAllRecipes = async (): Promise<Recipe[] | null> => {
     }
 };
 
+/**
+ * Fetches a specific recipe from the API.
+ *
+ * @param {string} recipeName - The name of the recipe to fetch.
+ * @return {Promise<Recipe | null>} A promise that resolves to the fetched recipe or null if not found.
+ */
 export const fetchSpecificRecipe = async (
     recipeName: string
 ): Promise<Recipe | null> => {
@@ -47,6 +53,9 @@ export const fetchSpecificRecipe = async (
                 : `${DEVELOPMENT_API_URL}/${recipeName}/details`
         );
 
+        /**
+         * TODO: Return a 404 if the recipe is not found.
+         */
         if (!response.ok) {
             return null;
         }
