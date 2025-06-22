@@ -7,5 +7,5 @@ export const RECIPE_JSON_FILE_PATH = path.join(
     'recipes.json'
 );
 
-export const PRODUCTION_API_URL = 'https://bicolbites.vercel.app/api/recipe';
+export const PRODUCTION_API_URL = 'https://bicolbites.martinatole.com/api/recipe';
 export const DEVELOPMENT_API_URL = 'http://localhost:3000/api/recipe';
